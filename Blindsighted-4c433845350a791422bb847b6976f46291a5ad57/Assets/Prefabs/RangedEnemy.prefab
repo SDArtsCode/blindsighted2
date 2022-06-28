@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  detectionRange: 2
+  detectionRange: 50
   movementSpeed: 8
   attackSpeed: 1
   layerMask:
@@ -142,10 +142,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   state: 0
   minAttackDistance: 60
-  attackBuildUp: 1.5
+  attackBuildUp: 1
   attackDelay: 5
-  bulletVelocity: 30
+  bulletVelocity: 35
   ambience: {fileID: 5108903088529139264}
-  ambienceDelay: 4
+  ambienceDelay: 5
   rampUp: {fileID: 4884125480511759474}
   enemyProjectile: {fileID: 8846589400875592499, guid: 20946bd6a77dd3b4fbed123c3e6e14b0, type: 3}
+  black: {fileID: 2100000, guid: af2f7c0b583eeda4fba91f112c0943c1, type: 2}
+  outline: {fileID: 2100000, guid: b200ed4e6857b31458182b25cc45a5a3, type: 2}

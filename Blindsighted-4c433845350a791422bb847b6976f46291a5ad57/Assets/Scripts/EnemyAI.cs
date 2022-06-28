@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
 
     [HideInInspector] public EnemyState state = EnemyState.Detection;
 
-    private void Start()
+    public virtual void Start()
     {
         agent = transform.parent.GetComponent<NavMeshAgent>();
     }

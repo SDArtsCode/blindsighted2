@@ -14,7 +14,19 @@ public class RangedEnemy : EnemyAI
     [SerializeField] AudioSource rampUp;
     [SerializeField] Transform enemyProjectile;
 
-    bool canAttack;
+    [SerializeField] Material black;
+    [SerializeField] Material outline;
+    MeshRenderer mr;
+
+
+    bool canAttack = true;
+
+    public override void Start()
+    {
+        base.Start();
+
+        mr = GetComponent<MeshRenderer>();
+    }
 
     public override void Update()
     {
@@ -45,6 +57,8 @@ public class RangedEnemy : EnemyAI
             if (hit.collider.gameObject.tag == "Player" && Mathf.Abs(Vector3.Distance(transform.position, PlayerMovement.playerPosition)) < minAttackDistance && canAttack)
             {
                 StartCoroutine(AttackSequence());
+
+                
             }
         }
     }
@@ -53,9 +67,12 @@ public class RangedEnemy : EnemyAI
     {
         canAttack = false;
 
+
         //attack build up, speed reduced
+        mr.material = outline;
         agent.speed = attackSpeed;
         rampUp.Play();
+        
         yield return new WaitForSeconds(attackBuildUp);
 
         //projectile fired
@@ -64,6 +81,7 @@ public class RangedEnemy : EnemyAI
 
         //speed restored
         agent.speed = movementSpeed;
+        mr.material = black;
 
         yield return new WaitForSeconds(attackDelay);
 
