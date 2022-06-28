@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3911171879559780623, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: m_text
-      value: Thou art clay-brained.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4313547855717455216, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 1111071135}
     - target: {fileID: 4732601231737106057, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -225,66 +217,6 @@ PrefabInstance:
     - target: {fileID: 4732601231737106069, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732601231737106070, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6521285492500931452, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[6]
-      value: Resistance is futile.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[7]
-      value: You are weak.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[8]
-      value: You scrawny little man.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[9]
-      value: you're cute ;) uwu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[10]
-      value: Suffer.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[11]
-      value: I foresaw your failure.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[12]
-      value: You will pay for your sins.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[13]
-      value: die Die DIE
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[14]
-      value: DEAD.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[15]
-      value: The End.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552329935776367068, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: insults.Array.data[16]
-      value: You bore me.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566058480224031466, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
@@ -416,11 +348,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1111071135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4732601231913883743, guid: b4d2f5eebbc885245b444e53e298684e, type: 3}
-  m_PrefabInstance: {fileID: 430740111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1391828334
 PrefabInstance:
   m_ObjectHideFlags: 0
