@@ -55,12 +55,12 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                if (Time.time >= nextTimeToFire && ammoInGun > 0 && !isReloading)
+                if (nextTimeToFire > 0 && ammoInGun > 0 && !isReloading)
                 {
-                    nextTimeToFire = Time.time + 1f / currentWeapon.fireRate;
+                    nextTimeToFire =  -1f / currentWeapon.fireRate;
                     Shoot();
                 }
-                else if (Time.time >= nextTimeToFire && ammoInGun <= 0 && !isReloading)
+                else if (nextTimeToFire >= 0 && ammoInGun <= 0 && !isReloading)
                 {
                     Reload();
                 }
@@ -73,12 +73,15 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+
+        nextTimeToFire += Time.deltaTime;
     }
 
     void Shoot()
     {
         ammoInGun--;
         anim.SetTrigger("Fire");
+        anim.speed = currentWeapon.fireRate;
 
         muzzleFlash.Play();
         flashAnim.SetTrigger("Flash");

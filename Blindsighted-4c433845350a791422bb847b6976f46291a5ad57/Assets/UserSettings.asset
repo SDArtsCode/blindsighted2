@@ -17,4 +17,4 @@ MonoBehaviour:
   sfxVolume: 0
   ambienceVolume: 0
   loop: 0
-  weapon: {fileID: 11400000, guid: 0440d1279a703044fb3232b6c8441431, type: 2}
+  weapon: {fileID: 11400000, guid: 7468702dcded47e4e9952a35f731cfe2, type: 2}
