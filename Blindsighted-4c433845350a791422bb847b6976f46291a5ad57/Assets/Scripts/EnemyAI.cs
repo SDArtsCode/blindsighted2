@@ -3,24 +3,48 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private float meleeDamage = 50;
+    public enum EnemyState
+    {
+        Detection, 
+        Navigation,
+        Attacking
+    }
+
+    [SerializeField] private float damage = 50;
+    [SerializeField] private float detectionRange;
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float attackSpeed;
     private NavMeshAgent agent;
+
+    EnemyState state = EnemyState.Detection;
 
     private void Start()
     {
         agent = transform.parent.GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    public virtual void Update()
     {
-        agent.SetDestination(PlayerMovement.playerPosition);
+        switch (state)
+        {
+            case EnemyState.Detection:
+                DetectPlayer();
+                break;
+            case EnemyState.Navigation:
+                NavigateToPlayer();
+                break;
+            case EnemyState.Attacking:
+                AttackPlayer();
+                break;
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
-    { 
+    {
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
+            other.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 
@@ -29,12 +53,14 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    public void NavigateToPlayer()
+    {
+        agent.SetDestination(PlayerMovement.playerPosition);
+        agent.speed = movementSpeed;
+    }
 
-    //detection phase
+    public void AttackPlayer()
+    {
 
-    //tracking phase
-
-    //attacking phase
-
-    //intermittent audio cues
+    }
 }
