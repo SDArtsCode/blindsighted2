@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+
+public class PlayerHealth : Health
+{
+    public static event Action onPlayerDeath;
+
+    public override void Death()
+    {
+        onPlayerDeath();
+    }
+}
