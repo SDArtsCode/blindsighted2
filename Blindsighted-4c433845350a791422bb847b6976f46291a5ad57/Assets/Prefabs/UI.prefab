@@ -137,7 +137,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtScreen: {fileID: 7566058480224031466}
   deathScreen: {fileID: 6521285492500931452}
+  reticle: {fileID: 4732601231913883743}
   respawnTimer: 3
 --- !u!1 &4732601231913883743
 GameObject:
@@ -283,6 +284,7 @@ GameObject:
   - component: {fileID: 4136972777711222837}
   - component: {fileID: 5600828294339103651}
   - component: {fileID: 3911171879559780623}
+  - component: {fileID: 6552329935776367068}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -308,7 +310,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2100, y: 200}
+  m_SizeDelta: {x: 1200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5600828294339103651
 CanvasRenderer:
@@ -338,7 +340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You have died.
+  m_text: Thou art clay-brained.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}
   m_sharedMaterial: {fileID: 2057907086410916823, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}
@@ -365,8 +367,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 138.7
-  m_fontSizeBase: 138.7
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -407,6 +409,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6552329935776367068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782669650592016436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214d47a577deaf9459528d8f6a1f802c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.1
+  insults:
+  - Better luck next time.
+  - You suck.
+  - Not cool, dude.
+  - You deserve this.
+  - Waaa Waaa
+  - Somebody call the waaambulance.
+  - Resistance is futile.
+  - You are weak.
+  - You scrawny little man.
+  - you're cute ;) uwu
+  - Suffer.
+  - I foresaw your failure.
+  - You will pay for your sins.
+  - die Die DIE
+  - DEAD.
+  - The End.
+  - You bore me.
 --- !u!1 &6521285492500931452
 GameObject:
   m_ObjectHideFlags: 0

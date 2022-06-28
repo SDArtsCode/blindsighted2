@@ -23,4 +23,18 @@ public class EnemyAI : MonoBehaviour
             other.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
         }
     }
+
+    public void DetectPlayer()
+    {
+
+    }
+
+
+    //detection phase
+
+    //tracking phase
+
+    //attacking phase
+
+    //intermittent audio cues
 }

@@ -5,6 +5,7 @@ public class UIController : MonoBehaviour
     private Animator anim;
     [SerializeField] GameObject hurtScreen;
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject reticle;
 
     [SerializeField] float respawnTimer;
     bool dead;
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
 
         hurtScreen.SetActive(false);
         deathScreen.SetActive(false);
+        reticle.SetActive(true);
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class UIController : MonoBehaviour
 
     public void PlayerDeath()
     {
+        reticle.SetActive(false);
         deathScreen.SetActive(true);
         dead = true;
     }
