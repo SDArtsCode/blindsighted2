@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controls;
     private Animator anim;
+
     [SerializeField] private float speed = 8;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2.5f;
@@ -16,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     public static Vector3 playerPosition;
+
+    [SerializeField] private float dashTime = 1.5f;
+    [SerializeField] private float dashSpeed = 3f;
+    float time = 0.0f;
+    bool canDash = true;
+    bool dashing = false;
 
     private void Awake()
     {
@@ -31,6 +38,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (dashing == true)
+        {
+          if (time >= 0.1f){
+            speed /= dashSpeed;
+            dashing = false;
+          }
+        }
+        if (canDash == false)
+        {
+            time += Time.deltaTime;
+            if (time >= dashTime && isGrounded == true){
+              canDash = true;
+              time = 0.0f;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             LevelController.instance.ReloadLevel();
@@ -51,6 +74,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
+        if (Input.GetButtonDown("Dash") && canDash == true)
+        {
+            speed *= dashSpeed;
+            canDash = false;
+            dashing = true;
+
+        }
+
         Vector3 moveLocalTransform = transform.right * x + transform.forward * z;
 
         controls.Move(moveLocalTransform * speed * Time.deltaTime);
@@ -61,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
         playerPosition = transform.position;
 
-  
+
         anim.SetBool("isWalking", x != 0 || z != 0);
     }
 
