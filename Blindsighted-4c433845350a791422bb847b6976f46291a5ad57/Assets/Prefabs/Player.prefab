@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
+  masterMixer: {fileID: 24100000, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   maxAmmoInventory: 300
   bullet: {fileID: 21694218827060889, guid: e91f4334e88c53f43a8788afa48e292d, type: 3}
   travelTime: 3
@@ -268,14 +269,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d588e62d3ea1f48958285f4939be07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  gravity: -14.2245
-  jumpHeight: 3.5
+  speed: 22.5
+  gravity: -28.449
+  jumpHeight: 10
   groundCheck: {fileID: 6153139044895589855}
   groundRadius: 0.35
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  dashTime: 1.5
+  dashSpeed: 5
 --- !u!114 &1735807628
 MonoBehaviour:
   m_ObjectHideFlags: 0
