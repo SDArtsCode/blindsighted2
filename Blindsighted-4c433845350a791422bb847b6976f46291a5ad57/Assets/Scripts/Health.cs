@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
-    float currentHealth;
+    public float currentHealth;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public abstract class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(health, 0, maxHealth);
     }
 
-    public void TakeDamage(float health)
+    public virtual void TakeDamage(float health)
     {
         currentHealth = Mathf.Clamp(currentHealth - health, 0, maxHealth);
         if(currentHealth <= 0)

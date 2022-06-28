@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         PlayerHealth.onPlayerDeath += OnPlayerDeath;
+        PlayerHealth.onPlayerHit += OnPlayerHit;
     }
 
     void Start()
@@ -64,8 +65,13 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isWalking", x != 0 || z != 0);
     }
 
+    void OnPlayerHit()
+    {
+        speed /= 2;
+    }
+
     void OnPlayerDeath()
     {
-        speed /= 6;
+        speed /= 3;
     }
 }
