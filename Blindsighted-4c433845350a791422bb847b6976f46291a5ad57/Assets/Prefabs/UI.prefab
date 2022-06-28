@@ -196,7 +196,7 @@ MonoBehaviour:
   hurtScreen: {fileID: 7566058480224031466}
   deathScreen: {fileID: 6521285492500931452}
   reticle: {fileID: 4732601231913883743}
-  respawnTimer: 3
+  respawnTimer: 4
 --- !u!1 &4732601231913883743
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Thou art clay-brained.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}
   m_sharedMaterial: {fileID: 2057907086410916823, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}

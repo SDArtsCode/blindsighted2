@@ -1,32 +1,26 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
     MeshRenderer mr;
     Rigidbody rb;
     ParticleSystem ps;
 
-    float damage;
+    public float damage;
 
-    private void Start()
+    public virtual void Start()
     {
-        damage = Gun.currentWeapon.damage;
-
         rb = GetComponent<Rigidbody>();
         ps = GetComponent<ParticleSystem>();
         mr = GetComponent<MeshRenderer>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            other.GetComponent<Health>().TakeDamage(damage);
-            Explode();
-        }
+        
     }
 
-    void Explode()
+    public void Explode()
     {
         mr.enabled = false;
         damage = 0;

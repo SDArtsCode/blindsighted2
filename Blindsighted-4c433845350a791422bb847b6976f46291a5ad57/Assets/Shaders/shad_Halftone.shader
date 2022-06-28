@@ -16,7 +16,7 @@ Shader "Custom/Halftone" {
 	}
 		SubShader{
 			
-			Cull Off
+			
 			//the material is completely non-transparent and is rendered at the same time as the other opaque geometry
 		Tags{ "RenderType" = "Opaque" "Queue" = "Geometry"}
 

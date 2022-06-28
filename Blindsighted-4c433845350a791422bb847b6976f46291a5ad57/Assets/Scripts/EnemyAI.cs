@@ -10,13 +10,14 @@ public class EnemyAI : MonoBehaviour
         Attacking
     }
 
-    [SerializeField] private float damage = 50;
-    [SerializeField] private float detectionRange;
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float attackSpeed;
-    private NavMeshAgent agent;
+    public float damage = 50;
+    [SerializeField] private float detectionRange = 2;
+    public float movementSpeed = 8;
+    public float attackSpeed;
+    public LayerMask layerMask;
+    [HideInInspector] public NavMeshAgent agent;
 
-    EnemyState state = EnemyState.Detection;
+    [HideInInspector] public EnemyState state = EnemyState.Detection;
 
     private void Start()
     {
@@ -48,18 +49,35 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void DetectPlayer()
+    public virtual void DetectPlayer()
     {
-
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, (PlayerMovement.playerPosition - transform.position).normalized, out hit, detectionRange, layerMask))
+        {
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                state = EnemyState.Navigation;
+            }
+        }
     }
 
-    public void NavigateToPlayer()
+    public virtual void NavigateToPlayer()
     {
         agent.SetDestination(PlayerMovement.playerPosition);
         agent.speed = movementSpeed;
     }
 
-    public void AttackPlayer()
+    public virtual void AttackPlayer()
+    {
+
+    }
+
+    Vector3 Direction(Vector3 from, Vector3 to)
+    {
+        return (from - to).normalized;
+    }
+
+    private void OnDrawGizmos()
     {
 
     }
