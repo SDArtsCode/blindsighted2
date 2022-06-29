@@ -37,7 +37,7 @@ public class FlareController : MonoBehaviour
 
     void LaunchFlare()
     {
-        if(flares.Count > 3)
+        if(flares.Count + 1 > 3)
         {
             Destroy(flares[0]);
             flares.RemoveAt(0);
