@@ -90,23 +90,9 @@ MonoBehaviour:
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
-    name: PlayerHit
-    clip: {fileID: 8300000, guid: ee57eec47b7899848b601a2251f1fa35, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  - source: {fileID: 0}
-    name: Whispers
-    clip: {fileID: 8300000, guid: 408403da16745494e87bb321f5ac0068, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  - source: {fileID: 0}
-    name: GameOver
-    clip: {fileID: 8300000, guid: df64f2334cbff0c49a4437bed73fe356, type: 3}
-    volume: 0.8
+    name: FlareShoot
+    clip: {fileID: 8300000, guid: 6e776896c08cb674db4c58a419a6672d, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
@@ -125,29 +111,22 @@ MonoBehaviour:
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
-    name: Silly1
-    clip: {fileID: 8300000, guid: 570a3fcf73ddfcd4ea7d869a3080ce52, type: 3}
+    name: Whispers
+    clip: {fileID: 8300000, guid: 408403da16745494e87bb321f5ac0068, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
-    name: Silly2
-    clip: {fileID: 8300000, guid: 7a2d8055b89901948917eda8d9cb7658, type: 3}
+    name: PlayerHit
+    clip: {fileID: 8300000, guid: ee57eec47b7899848b601a2251f1fa35, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
-    name: Silly3
-    clip: {fileID: 8300000, guid: bb6d5d4acd3bc584b80382182f50388d, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  - source: {fileID: 0}
-    name: Silly4
-    clip: {fileID: 8300000, guid: 2386ce5f91d587d4f83cf84ba943f371, type: 3}
+    name: GameOver
+    clip: {fileID: 8300000, guid: df64f2334cbff0c49a4437bed73fe356, type: 3}
     volume: 1
     pitch: 1
     loop: 0
