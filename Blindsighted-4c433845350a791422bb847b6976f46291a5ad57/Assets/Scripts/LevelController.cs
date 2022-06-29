@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     public static LevelController instance;
+    [SerializeField] Settings settings;
 
     private int loopIndex;
     [SerializeField] Transform spawnPoint;
@@ -11,7 +12,6 @@ public class LevelController : MonoBehaviour
     [SerializeField] Transform currentPlayer;
     [SerializeField] Transform playerPrefab;
     
-    [SerializeField] Transform currentEnemies;
     [SerializeField] Transform[] enemyPrefab;
 
     private void Awake()
@@ -29,10 +29,9 @@ public class LevelController : MonoBehaviour
         Destroy(currentPlayer.gameObject);
         currentPlayer = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
 
-        if(currentEnemies != null)
+        for(int i = 0; i < enemyPrefab.Length;  i++)
         {
-            //Destroy(currentEnemies.gameObject);
-            //currentEnemies = Instantiate(enemyPrefab[loopIndex], new Vector3(0, 0, 0), Quaternion.identity);
+            enemyPrefab[i].gameObject.SetActive(i == settings.loop);
         }
     }
 
@@ -40,6 +39,4 @@ public class LevelController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    
 }

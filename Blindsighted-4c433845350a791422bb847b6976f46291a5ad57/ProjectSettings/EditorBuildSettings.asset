@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: ba17b8d9fa2aea84c829ad3be865c3d8
   - enabled: 1
-    path: Assets/Scenes/CaveTest.unity
-    guid: dc480dd2295f2b449a3c15e4dc8da081
-  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: f4e68af4a04887047824e255615ab87d
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 6a7a16912e5fa3944ba1b211a4061257
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: d3dfd4070b13c484797f19a857836b87
   - enabled: 1
     path: Assets/Scenes/OutroScene.unity
     guid: 888fa38b3d2019c488c89dfd630d6345

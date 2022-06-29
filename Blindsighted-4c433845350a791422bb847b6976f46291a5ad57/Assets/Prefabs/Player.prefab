@@ -275,7 +275,7 @@ MonoBehaviour:
   gravity: -28.449
   jumpHeight: 10
   groundCheck: {fileID: 6153139044895589855}
-  groundRadius: 0.5
+  groundRadius: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -309,11 +309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flarePrefab: {fileID: 4684779950111456277, guid: dde96f2052aa5674f9b47604648e05ea, type: 3}
   flareOrigin: {fileID: 8248997975639149053}
-  flareDelay: 10
-  launchVelocity: 1.5
-  launchAngularVelocity: 100
-  flareInventory: 10
-  maxFlareInventory: 10
+  flareDelay: 7
+  launchVelocity: 2
+  launchAngularVelocity: 50
   fpsCam: {fileID: 6153139044341406262}
 --- !u!95 &1735807629
 Animator:

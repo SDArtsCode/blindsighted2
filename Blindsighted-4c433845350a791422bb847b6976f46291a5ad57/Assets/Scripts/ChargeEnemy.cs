@@ -73,9 +73,4 @@ public class ChargeEnemy : EnemyAI
 
         yield break;
     }
-
-    public override void AttackPlayer()
-    {
-        base.AttackPlayer();
-    }
 }

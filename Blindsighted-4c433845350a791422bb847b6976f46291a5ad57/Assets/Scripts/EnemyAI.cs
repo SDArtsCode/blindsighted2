@@ -1,5 +1,6 @@
 using UnityEngine.AI;
 using UnityEngine;
+using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class EnemyAI : MonoBehaviour
     {
         Detection, 
         Navigation,
-        Attacking
     }
 
     public float damage = 50;
@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     public float attackSpeed = 16f;
     public LayerMask layerMask;
     [HideInInspector] public NavMeshAgent agent;
+    Collider col;
 
     [HideInInspector] public EnemyState state = EnemyState.Detection;
 
@@ -23,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     {
         agent = transform.parent.GetComponent<NavMeshAgent>();
         agent.speed = movementSpeed;
+        col = GetComponent<Collider>(); 
     }
 
     public virtual void Update()
@@ -35,10 +37,6 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Navigation:
                 NavigateToPlayer();
                 break;
-            case EnemyState.Attacking:
-                AttackPlayer();
-                break;
-
         }
     }
 
@@ -47,6 +45,7 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            StartCoroutine(DisableCollider());
         }
     }
 
@@ -67,10 +66,6 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(PlayerMovement.playerPosition);
     }
 
-    public virtual void AttackPlayer()
-    {
-
-    }
 
     Vector3 Direction(Vector3 from, Vector3 to)
     {
@@ -80,5 +75,14 @@ public class EnemyAI : MonoBehaviour
     private void OnDrawGizmos()
     {
 
+    }
+
+    IEnumerator DisableCollider()
+    {
+        col.enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        col.enabled = true;
     }
 }

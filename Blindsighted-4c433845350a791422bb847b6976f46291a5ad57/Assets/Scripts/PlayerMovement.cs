@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 3f;
     float time = 0.0f;
     bool canDash = true;
+    bool canJump = true;
     bool dashing = false;
+    public static bool locked;
 
     private void Awake()
     {
@@ -38,63 +40,68 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (dashing == true)
+        if (!locked)
         {
-          if (time >= 0.1f){
-            speed /= dashSpeed;
-            dashing = false;
-          }
-        }
-        if (canDash == false)
-        {
-            time += Time.deltaTime;
-            if (time >= dashTime && isGrounded == true){
-              canDash = true;
-              time = 0.0f;
+            if (dashing == true)
+            {
+                if (time >= 0.1f)
+                {
+                    speed /= dashSpeed;
+                    dashing = false;
+                }
             }
+            if (canDash == false)
+            {
+                time += Time.deltaTime;
+                if (time >= dashTime && isGrounded == true)
+                {
+                    canDash = true;
+                    time = 0.0f;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                LevelController.instance.ReloadLevel();
+            }
+
+            float x = Input.GetAxisRaw("Horizontal");
+            float z = Input.GetAxisRaw("Vertical");
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundRadius, groundMask);
+
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+
+            if (Input.GetButtonDown("Jump") && canJump)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+
+            if (Input.GetButtonDown("Dash") && canDash)
+            {
+                AudioManager.instance.Play("Dash");
+                speed *= dashSpeed;
+                canDash = false;
+                dashing = true;
+
+            }
+
+            Vector3 moveLocalTransform = transform.right * x + transform.forward * z;
+
+            controls.Move(moveLocalTransform * speed * Time.deltaTime);
+
+            velocity.y += gravity * Time.deltaTime;
+
+            controls.Move(velocity * Time.deltaTime);
+
+            playerPosition = transform.position;
+
+
+            anim.SetBool("isWalking", x != 0 || z != 0);
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            LevelController.instance.ReloadLevel();
-        }
-
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundRadius, groundMask);
-
-        if(isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        if (Input.GetButtonDown("Dash") && canDash == true)
-        {
-            AudioManager.instance.Play("Dash");
-            speed *= dashSpeed;
-            canDash = false;
-            dashing = true;
-
-        }
-
-        Vector3 moveLocalTransform = transform.right * x + transform.forward * z;
-
-        controls.Move(moveLocalTransform * speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controls.Move(velocity * Time.deltaTime);
-
-        playerPosition = transform.position;
-
-
-        anim.SetBool("isWalking", x != 0 || z != 0);
     }
 
     void OnPlayerHit()
@@ -105,5 +112,10 @@ public class PlayerMovement : MonoBehaviour
     void OnPlayerDeath()
     {
         speed /= 3;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
 }

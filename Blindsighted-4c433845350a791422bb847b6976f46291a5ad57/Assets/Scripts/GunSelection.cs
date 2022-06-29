@@ -29,7 +29,6 @@ public class GunSelection : MonoBehaviour
 
     public void Loop()
     {
-        Debug.Log("asdasd");
         settings.loop++;
         LevelLoader.instance.LoadLevel(0, 1);
     }

@@ -148,6 +148,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 509128080524736421, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
   m_PrefabInstance: {fileID: 7520269364822132275}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &2798920390440059340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020229712014193046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: c3b60375b335ff54a9316a7a74ffddba, type: 3}
 --- !u!95 &6110494910621318696
 Animator:
   serializedVersion: 4
@@ -192,7 +206,7 @@ MonoBehaviour:
   minAttackDistance: 60
   attackBuildUp: 1
   attackDelay: 5
-  bulletVelocity: 35
+  bulletVelocity: 70
   ambience: {fileID: 5108903088529139264}
   ambienceDelay: 5
   rampUp: {fileID: 4884125480511759474}

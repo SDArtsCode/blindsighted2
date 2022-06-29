@@ -5,6 +5,7 @@ public abstract class Bullet : MonoBehaviour
     MeshRenderer mr;
     Rigidbody rb;
     ParticleSystem ps;
+    [SerializeField] Transform explosionPrefab;
 
     public float damage;
 
@@ -17,14 +18,16 @@ public abstract class Bullet : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Environment" || other.gameObject.tag == "Ground")
+        {
+            Explode();
+        }
     }
 
     public void Explode()
     {
-        mr.enabled = false;
-        damage = 0;
-        rb.velocity = Vector3.zero;
-        ps.Play();
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

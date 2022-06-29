@@ -42,9 +42,4 @@ public class MeleeEnemy : EnemyAI
 
 
     }
-
-    public override void AttackPlayer()
-    {
-        base.AttackPlayer();
-    }
 }

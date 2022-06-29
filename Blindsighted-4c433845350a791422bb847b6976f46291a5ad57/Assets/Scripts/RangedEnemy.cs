@@ -90,9 +90,4 @@ public class RangedEnemy : EnemyAI
         canAttack = true;
         yield break;
     }
-
-    public override void AttackPlayer()
-    {
-        base.AttackPlayer();
-    }
 }

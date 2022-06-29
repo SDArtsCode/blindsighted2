@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseVision : MonoBehaviour
@@ -12,10 +10,11 @@ public class MouseVision : MonoBehaviour
 
     public Transform camPivot;
 
+    public static bool locked = false;
+
     private void Awake()
     {
         PlayerHealth.onPlayerDeath += OnPlayerDeath;
-
     }
 
     void Start()
@@ -27,20 +26,23 @@ public class MouseVision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (!locked)
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        rotateY += mouseX;
-        rotateX -= mouseY;
-        rotateX = Mathf.Clamp(rotateX, -90f, 90f);
+            rotateY += mouseX;
+            rotateX -= mouseY;
+            rotateX = Mathf.Clamp(rotateX, -90f, 90f);
 
 
-        camPivot.transform.localRotation = Quaternion.Euler(rotateX, 0f, 0f);
-        transform.localRotation = Quaternion.Euler(0f, rotateY, 0f);
+            camPivot.transform.localRotation = Quaternion.Euler(rotateX, 0f, 0f);
+            transform.localRotation = Quaternion.Euler(0f, rotateY, 0f);
+        }
     }
 
     void OnPlayerDeath()
     {
-        mouseSensitivity /= 6f;
+        mouseSensitivity /= 4f;
     }
 }

@@ -179,7 +179,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 126
   DopplerLevel: 1
   MinDistance: 4
   MaxDistance: 30
@@ -383,15 +383,15 @@ PrefabInstance:
       objectReference: {fileID: -2432090755550338912, guid: c381b0a5f7b72f7418bbd8a706895b80, type: 3}
     - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -580,6 +580,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: c381b0a5f7b72f7418bbd8a706895b80, type: 3}
+--- !u!95 &9042696792204689684
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8457939044793458445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a00804ca5893e0419f17a5032d468c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &141000302904996117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,28 +628,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2625929479238274e8e89cbca92e0525, type: 3}
   - {fileID: 8300000, guid: 8b7f4a526e9541549b65e35d2336b896, type: 3}
   - {fileID: 8300000, guid: c2d189b99a73f0f4ebe236f4d9cac681, type: 3}
-  ambience: {fileID: 5076918493054575799}
-  shriek: {fileID: 4015479464662018446}
---- !u!95 &9042696792204689684
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457939044793458445}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a00804ca5893e0419f17a5032d468c0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  ambience: {fileID: 4015479464662018446}
+  shriek: {fileID: 5076918493054575799}
 --- !u!4 &8457939044844127598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 509128080575376838, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}

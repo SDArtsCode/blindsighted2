@@ -33,6 +33,13 @@ public class TextDisplayer : MonoBehaviour
         for (int s = 0; s < text.sentences.Length; s++)
         {
             textDisplay.text = "";
+            
+            for(int i = 1; i <= 4; i++)
+            {
+                AudioManager.instance.Stop("Silly" + i);
+            }
+
+            AudioManager.instance.Play("Silly" + Random.Range(1, 5));
 
             for (int i = 0; i < text.sentences[s].Length; i++)
             {

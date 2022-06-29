@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        LevelLoader.instance.LoadLevel(0);
+        LevelLoader.instance.LoadLevel(1);
         AudioManager.instance.Play("MenuGood");
     }
 

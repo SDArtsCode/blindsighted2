@@ -63,9 +63,9 @@ MonoBehaviour:
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: MegaGunShoot
-    clip: {fileID: 8300000, guid: 9a489eddafc31cd4897159c7c16de9b3, type: 3}
-    volume: 0.347
-    pitch: 0.78
+    clip: {fileID: 8300000, guid: 2bef87726f4c4c94aa0f58a6f38221a6, type: 3}
+    volume: 0.321
+    pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
@@ -109,18 +109,46 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 0
-    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: MenuAffirmative
     clip: {fileID: 8300000, guid: d6e5052055c011348b185923a757a7f3, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: MenuGood
     clip: {fileID: 8300000, guid: 870d21a4a3a4efb48b55fa56cfb3ab14, type: 3}
     volume: 1
     pitch: 1
     loop: 0
-    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Silly1
+    clip: {fileID: 8300000, guid: 570a3fcf73ddfcd4ea7d869a3080ce52, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Silly2
+    clip: {fileID: 8300000, guid: 7a2d8055b89901948917eda8d9cb7658, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Silly3
+    clip: {fileID: 8300000, guid: bb6d5d4acd3bc584b80382182f50388d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Silly4
+    clip: {fileID: 8300000, guid: 2386ce5f91d587d4f83cf84ba943f371, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}

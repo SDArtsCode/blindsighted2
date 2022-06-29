@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FlareController : MonoBehaviour
@@ -8,8 +9,7 @@ public class FlareController : MonoBehaviour
     private float currentTime;
     [SerializeField] float launchVelocity;
     [SerializeField] float launchAngularVelocity;
-    [SerializeField] int flareInventory;
-    [SerializeField] int maxFlareInventory;
+    private List<GameObject> flares = new List<GameObject>();
 
     [SerializeField] Transform fpsCam;
 
@@ -27,7 +27,7 @@ public class FlareController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && flareInventory > 0 && currentTime > flareDelay && !dead)
+        if (Input.GetMouseButtonDown(1) && currentTime > flareDelay && !dead)
         {
             LaunchFlare();
         }
@@ -37,9 +37,20 @@ public class FlareController : MonoBehaviour
 
     void LaunchFlare()
     {
+        if(flares.Count > 3)
+        {
+            Destroy(flares[0]);
+            flares.RemoveAt(0);
+        }
+
+        Debug.Log(flares.Count);
+
         currentTime = 0;
 
         var flare = Instantiate(flarePrefab, flareOrigin.transform.position, Quaternion.identity);
+
+        flares.Add(flare);
+
         Rigidbody flareRB = flare.GetComponent<Rigidbody>();
         flareRB.velocity = fpsCam.forward * launchVelocity * 10;
         flareRB.angularVelocity = new Vector3(launchAngularVelocity, launchAngularVelocity / 3, 0);

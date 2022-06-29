@@ -556,6 +556,63 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1396617053
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180262, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296053018332180280, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
 --- !u!1 &1407769426
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,8 +709,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}
-  m_sharedMaterial: {fileID: 2057907086410916823, guid: bb592deaceea21f4a9f6b0e0916ac23c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 431c005c4a92a5e4b97483a0d0f1bdaf, type: 2}
+  m_sharedMaterial: {fileID: -9070869654190619590, guid: 431c005c4a92a5e4b97483a0d0f1bdaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -713,7 +770,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -68.214775, z: 0, w: -79.58389}
+  m_margin: {x: 185.01257, y: -68.214775, z: 188.25903, w: -79.58389}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
