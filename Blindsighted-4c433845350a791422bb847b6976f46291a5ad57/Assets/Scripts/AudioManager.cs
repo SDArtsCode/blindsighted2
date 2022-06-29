@@ -45,6 +45,9 @@ public class AudioManager : MonoBehaviour
         am.SetFloat("AmbienceVolume", Mathf.Log10(settings.ambienceVolume) * 20);
         am.SetFloat("SFXVolume", Mathf.Log10(settings.sfxVolume) * 20);
         am.SetFloat("MusicVolume", Mathf.Log10(settings.musicVolume) * 20);
+
+        Stop("Whispers");
+        Stop("GameOver");
     }
 
     public void Play(string name)

@@ -18,7 +18,16 @@ public class GunSelection : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             gunButtons[i] = transform.GetChild(i);
-            gunButtons[i].gameObject.SetActive(i - 1 <= settings.loop);
+
+            if (midRound)
+            {
+                gunButtons[i].gameObject.SetActive(i - 1 < settings.loop);
+            }
+            else
+            {
+                gunButtons[i].gameObject.SetActive(i - 1 <= settings.loop);
+            }
+            
         }
     }
 

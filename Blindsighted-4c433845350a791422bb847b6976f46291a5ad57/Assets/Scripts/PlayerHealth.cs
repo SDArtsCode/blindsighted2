@@ -11,9 +11,6 @@ public class PlayerHealth : Health
     public override void Start()
     {
         base.Start();
-
-        AudioManager.instance.Stop("GameOver");
-        AudioManager.instance.Stop("Whispers");
     }
 
     public override void Death()

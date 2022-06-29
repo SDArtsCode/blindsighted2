@@ -21,19 +21,19 @@ public class RespawnMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.instance.Stop("GameOver");
         LevelLoader.instance.LoadLevel(0, 0);
-        Debug.Log("hit");
     }
 
     public void Respawn()
     {
+        AudioManager.instance.Stop("GameOver");
         LevelLoader.instance.LoadLevel(0, -1);
-        Debug.Log("hit");
     }
 
     public void ChangeWeapon()
     {
-        Debug.Log("hit");
+        AudioManager.instance.Stop("GameOver");
         LevelLoader.instance.LoadLevel(0, 7);
     }
 }

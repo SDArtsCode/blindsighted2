@@ -5077,7 +5077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3802322419999284813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TommyGunPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

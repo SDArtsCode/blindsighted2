@@ -21,7 +21,7 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.instance.Stop("GameOver");
+        
     }
 
     public void LoadLevel(int transitionIndex, int sceneIndex)
