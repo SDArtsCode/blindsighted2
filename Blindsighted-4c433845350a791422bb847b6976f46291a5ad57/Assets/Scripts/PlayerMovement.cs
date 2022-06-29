@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 3f;
     float time = 0.0f;
     bool canDash = true;
-    bool canJump = true;
     bool dashing = false;
     public static bool locked;
 
@@ -75,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
                 velocity.y = -2f;
             }
 
-            if (Input.GetButtonDown("Jump") && canJump)
+            if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }

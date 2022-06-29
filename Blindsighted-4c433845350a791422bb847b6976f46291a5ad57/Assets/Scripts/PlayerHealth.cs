@@ -13,10 +13,13 @@ public class PlayerHealth : Health
         base.Start();
 
         AudioManager.instance.Stop("GameOver");
+        AudioManager.instance.Stop("Whispers");
     }
 
     public override void Death()
     {
+        base.Death();
+
         AudioManager.instance.Stop("Whispers");
         AudioManager.instance.Play("GameOver");
         onPlayerDeath();
