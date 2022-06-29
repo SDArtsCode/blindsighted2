@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flarePrefab: {fileID: 4684779950111456277, guid: dde96f2052aa5674f9b47604648e05ea, type: 3}
   flareOrigin: {fileID: 8248997975639149053}
-  flareDelay: 0.5
+  flareDelay: 10
   launchVelocity: 1.5
   launchAngularVelocity: 100
   flareInventory: 10
@@ -342,7 +342,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6153139043696408705}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -472,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6153139044341406262}
   - component: {fileID: 6153139044341406257}
-  - component: {fileID: 6153139044341406256}
+  - component: {fileID: 7845128173572314779}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -539,7 +539,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6153139044341406256
+--- !u!81 &7845128173572314779
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

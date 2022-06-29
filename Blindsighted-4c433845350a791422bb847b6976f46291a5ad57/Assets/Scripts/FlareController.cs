@@ -20,6 +20,11 @@ public class FlareController : MonoBehaviour
         PlayerHealth.onPlayerDeath += OnPlayerDeath;
     }
 
+    private void Start()
+    {
+        currentTime = flareDelay;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(1) && flareInventory > 0 && currentTime > flareDelay && !dead)

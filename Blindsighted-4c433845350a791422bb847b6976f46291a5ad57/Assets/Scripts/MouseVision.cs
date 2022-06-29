@@ -15,6 +15,7 @@ public class MouseVision : MonoBehaviour
     private void Awake()
     {
         PlayerHealth.onPlayerDeath += OnPlayerDeath;
+
     }
 
     void Start()

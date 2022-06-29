@@ -93,9 +93,9 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         ammoInGun--;
-        anim.SetTrigger("Fire");
         anim.speed = currentWeapon.fireRate;
-
+        anim.SetTrigger("Fire");
+    
         muzzleFlash.Play();
         masterMixer.SetFloat(audType, AUDMAX);
         flashAnim.SetTrigger("Flash");
