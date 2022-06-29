@@ -613,8 +613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  detectionRange: 1000
-  movementSpeed: 8
+  detectionRange: 100
+  movementSpeed: 12
   attackSpeed: 8
   layerMask:
     serializedVersion: 2

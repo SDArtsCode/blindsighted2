@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Backspace))
             {
                 LevelController.instance.ReloadLevel();
             }

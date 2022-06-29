@@ -53,6 +53,7 @@ public class TextDisplayer : MonoBehaviour
 
         yield return new WaitForSeconds(endDelay);
 
+
         if (!intro)
         {
             if(settings.loop >= 4)
@@ -69,8 +70,14 @@ public class TextDisplayer : MonoBehaviour
         {
             LevelLoader.instance.LoadLevel(0);
         }
-        
-
         yield break;
+    }
+
+    private void OnDestroy()
+    {
+        for (int i = 1; i <= 4; i++)
+        {
+            AudioManager.instance.Stop("Silly" + i);
+        }
     }
 }
