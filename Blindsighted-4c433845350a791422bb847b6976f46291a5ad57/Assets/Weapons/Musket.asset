@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponName: Musket
   damage: 120
   fireRate: 0.5
-  bulletSpeed: 130
+  bulletSpeed: 150
   reloadMultiplier: 0.5
   magSize: 1
   soundEffect: MegaGunShoot

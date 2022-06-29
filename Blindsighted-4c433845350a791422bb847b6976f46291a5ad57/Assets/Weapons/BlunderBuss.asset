@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed2e7644bab739b488d5176ffeafebdc, type: 3}
-  m_Name: DesertEagle
+  m_Name: BlunderBuss
   m_EditorClassIdentifier: 
-  weaponName: 
-  damage: 80
-  fireRate: 0.8
-  bulletSpeed: 120
-  reloadMultiplier: 0.4
-  magSize: 8
+  weaponName: BlunderBuss
+  damage: 10
+  fireRate: 2
+  bulletSpeed: 100
+  reloadMultiplier: 0.75
+  magSize: 1
   soundEffect: MegaGunShoot
   icon: {fileID: 0}
-  prefab: {fileID: 6676932196028743820, guid: 18d0fe6d9259fab49a270f5114365471, type: 3}
+  prefab: {fileID: 922216016065737752, guid: 2c2be523bf437b843a406ad6bf83acee, type: 3}

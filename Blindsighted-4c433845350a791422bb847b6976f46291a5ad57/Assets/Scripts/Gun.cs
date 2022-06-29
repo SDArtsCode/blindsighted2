@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     public static Weapon currentWeapon;
     public AudioMixer masterMixer;
 
+    [SerializeField] float randomness;
     [SerializeField] int maxAmmoInventory;
     [SerializeField] GameObject bullet;
     [SerializeField] float travelTime = 3.0f;
@@ -113,10 +114,21 @@ public class Gun : MonoBehaviour
             destination = ray.GetPoint(1000);
         }
 
-        var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
-        b.GetComponent<Rigidbody>().velocity = Direction(destination, gunOrigin.transform.position) * currentWeapon.bulletSpeed;
-        Destroy(b, travelTime);
-
+        if (currentWeapon.name == "BlunderBuss")
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
+                b.GetComponent<Rigidbody>().velocity = (Direction(destination, gunOrigin.transform.position) + new Vector3(Random.Range(-randomness, randomness), Random.Range(-randomness, randomness), Random.Range(-randomness, randomness))) * currentWeapon.bulletSpeed;
+                Destroy(b, travelTime);
+            }
+        }
+        else
+        {
+            var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
+            b.GetComponent<Rigidbody>().velocity = Direction(destination, gunOrigin.transform.position) * currentWeapon.bulletSpeed;
+            Destroy(b, travelTime);
+        }
     }
 
     public void Reload()
