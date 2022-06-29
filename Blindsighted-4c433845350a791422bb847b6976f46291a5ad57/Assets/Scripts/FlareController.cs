@@ -43,6 +43,8 @@ public class FlareController : MonoBehaviour
         Rigidbody flareRB = flare.GetComponent<Rigidbody>();
         flareRB.velocity = fpsCam.forward * launchVelocity * 10;
         flareRB.angularVelocity = new Vector3(launchAngularVelocity, launchAngularVelocity / 3, 0);
+
+        AudioManager.instance.Play("FlareShoot");
     }
 
     void OnPlayerDeath()

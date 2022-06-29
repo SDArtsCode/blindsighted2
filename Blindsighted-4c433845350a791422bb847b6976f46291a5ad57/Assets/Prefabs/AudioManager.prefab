@@ -73,3 +73,17 @@ MonoBehaviour:
     pitch: 1.19
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Dash
+    clip: {fileID: 8300000, guid: 9b600e5022f7db34fb9a5837cc70e521, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: FlareShoot
+    clip: {fileID: 8300000, guid: 6e776896c08cb674db4c58a419a6672d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}

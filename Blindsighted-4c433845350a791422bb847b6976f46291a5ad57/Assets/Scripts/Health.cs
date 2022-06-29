@@ -6,8 +6,9 @@ public abstract class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
     public float currentHealth;
+    public bool dead;
 
-    private void Start()
+    public virtual void Start()
     {
         currentHealth = maxHealth;
     }
@@ -24,10 +25,13 @@ public abstract class Health : MonoBehaviour
 
     public virtual void TakeDamage(float health)
     {
-        currentHealth = Mathf.Clamp(currentHealth - health, 0, maxHealth);
-        if(currentHealth <= 0)
+        if (!dead)
         {
-            Death();
+            currentHealth = Mathf.Clamp(currentHealth - health, 0, maxHealth);
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
         }
     }
 
@@ -38,6 +42,6 @@ public abstract class Health : MonoBehaviour
 
     public virtual void Death()
     {
-
+        dead = true;
     }
 }

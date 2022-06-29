@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Dash") && canDash == true)
         {
+            AudioManager.instance.Play("Dash");
             speed *= dashSpeed;
             canDash = false;
             dashing = true;

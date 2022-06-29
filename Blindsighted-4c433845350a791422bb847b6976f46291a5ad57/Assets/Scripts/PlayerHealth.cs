@@ -8,18 +8,33 @@ public class PlayerHealth : Health
     public static event Action onPlayerDeath;
     public static event Action onPlayerHit;
 
+    public override void Start()
+    {
+        base.Start();
+
+        AudioManager.instance.Stop("GameOver");
+    }
+
     public override void Death()
     {
+        AudioManager.instance.Stop("Whispers");
+        AudioManager.instance.Play("GameOver");
         onPlayerDeath();
     }
 
     public override void TakeDamage(float health)
     {
-        base.TakeDamage(health);
-        
-        if(currentHealth > 0)
+        if (!dead)
         {
-            onPlayerHit();
+            base.TakeDamage(health);
+
+            if (currentHealth > 0)
+            {
+                onPlayerHit();
+                AudioManager.instance.Play("PlayerHit");
+                AudioManager.instance.Play("Whispers");
+            }
         }
+       
     }
 }
