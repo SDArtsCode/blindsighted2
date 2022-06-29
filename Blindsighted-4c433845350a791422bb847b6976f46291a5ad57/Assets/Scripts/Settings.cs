@@ -4,10 +4,10 @@ using UnityEngine;
 public class Settings : ScriptableObject
 {
     //user settings
-    [Range(0.0001f, 1)] public float masterVolume;
-    [Range(0.0001f, 1)] public float musicVolume;
-    [Range(0.0001f, 1)] public float sfxVolume;
-    [Range(0.0001f, 1)] public float ambienceVolume;
+    [Range(0.0001f, 1)] public float masterVolume = 1;
+    [Range(0.0001f, 1)] public float musicVolume = 1;
+    [Range(0.0001f, 1)] public float sfxVolume = 1;
+    [Range(0.0001f, 1)] public float ambienceVolume = 1;
 
     //game data
     public int loop;

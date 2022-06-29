@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    [SerializeField] AudioMixer am;
+    [SerializeField] Settings settings;
+
     [SerializeField] Sound[] sounds;
 
 
@@ -37,6 +40,11 @@ public class AudioManager : MonoBehaviour
             s.source.playOnAwake = false;
             s.source.outputAudioMixerGroup = s.audioMixer;
         }
+
+        am.SetFloat("MasterVolume", Mathf.Log10(settings.masterVolume) * 20);
+        am.SetFloat("AmbienceVolume", Mathf.Log10(settings.ambienceVolume) * 20);
+        am.SetFloat("SFXVolume", Mathf.Log10(settings.sfxVolume) * 20);
+        am.SetFloat("MusicVolume", Mathf.Log10(settings.musicVolume) * 20);
     }
 
     public void Play(string name)

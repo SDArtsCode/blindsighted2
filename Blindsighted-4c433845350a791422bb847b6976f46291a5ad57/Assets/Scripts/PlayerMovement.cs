@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnPlayerHit()
     {
-        speed /= 2;
+        speed /= 2.5f;
     }
 
     void OnPlayerDeath()
