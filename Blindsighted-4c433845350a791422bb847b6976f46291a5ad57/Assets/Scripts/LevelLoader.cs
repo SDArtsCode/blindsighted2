@@ -27,7 +27,7 @@ public class LevelLoader : MonoBehaviour
     public void LoadLevel(int transitionIndex, int sceneIndex)
     {
         SetTransition(transitionIndex);
-        if(sceneIndex > 0)
+        if(sceneIndex >= 0)
         {
             if (transitionIndex == 0)
             {

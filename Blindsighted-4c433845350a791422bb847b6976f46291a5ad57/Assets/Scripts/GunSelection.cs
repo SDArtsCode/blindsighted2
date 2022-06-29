@@ -30,14 +30,13 @@ public class GunSelection : MonoBehaviour
 
     public void Loop()
     {
-        settings.loop++;
-
         if (midRound)
         {
             LevelLoader.instance.LoadLevel(0, settings.lastSceneIndex);
         }
         else
         {
+            settings.loop++;
             LevelLoader.instance.LoadLevel(0, 1);
         }        
     }

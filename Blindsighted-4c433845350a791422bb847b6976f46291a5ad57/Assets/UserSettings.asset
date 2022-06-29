@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c00665f3dd0bf042b1c249517f1c79f, type: 3}
   m_Name: UserSettings
   m_EditorClassIdentifier: 
-  masterVolume: 1
-  musicVolume: 1
-  sfxVolume: 1
-  ambienceVolume: 1
+  masterVolume: 0
+  musicVolume: 0
+  sfxVolume: 0
+  ambienceVolume: 0
   loop: 0
+  lastSceneIndex: 2
   weapon: {fileID: 11400000, guid: 5eb5bad2da871be47b6a8bb4c5b43a3f, type: 2}
