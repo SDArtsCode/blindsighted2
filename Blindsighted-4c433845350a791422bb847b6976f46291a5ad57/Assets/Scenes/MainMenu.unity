@@ -762,98 +762,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e776896c08cb674db4c58a419a6672d, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[6].name
-      value: FlareShoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: d6e5052055c011348b185923a757a7f3, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].name
-      value: MenuAffirmative
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 870d21a4a3a4efb48b55fa56cfb3ab14, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[8].name
-      value: MenuGood
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 408403da16745494e87bb321f5ac0068, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[9].name
-      value: Whispers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[10].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ee57eec47b7899848b601a2251f1fa35, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[10].name
-      value: PlayerHit
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[11].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: df64f2334cbff0c49a4437bed73fe356, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[11].name
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[8].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[8].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[6].audioMixer
-      value: 
-      objectReference: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[7].audioMixer
-      value: 
-      objectReference: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[8].audioMixer
-      value: 
-      objectReference: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
 --- !u!1 &357699596
@@ -1075,7 +983,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   m_audioClip: {fileID: 8300000, guid: c7288a4f1f921414f8b3f16bb532d22f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.367
+  m_Volume: 0.213
   m_Pitch: 0.5
   Loop: 1
   Mute: 0
@@ -4097,7 +4005,6 @@ GameObject:
   - component: {fileID: 1943410991}
   - component: {fileID: 1943410990}
   - component: {fileID: 1943410989}
-  - component: {fileID: 1943410992}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4171,102 +4078,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1943410992
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943410988}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c7288a4f1f921414f8b3f16bb532d22f, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1947284035
 GameObject:
   m_ObjectHideFlags: 0
