@@ -12,8 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     public float damage = 50;
     [SerializeField] private float detectionRange = 2;
-    public float movementSpeed = 8;
-    public float attackSpeed;
+    public float movementSpeed = 8f;
+    public float attackSpeed = 16f;
     public LayerMask layerMask;
     [HideInInspector] public NavMeshAgent agent;
 
@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     public virtual void Start()
     {
         agent = transform.parent.GetComponent<NavMeshAgent>();
+        agent.speed = movementSpeed;
     }
 
     public virtual void Update()
@@ -64,7 +65,6 @@ public class EnemyAI : MonoBehaviour
     public virtual void NavigateToPlayer()
     {
         agent.SetDestination(PlayerMovement.playerPosition);
-        agent.speed = movementSpeed;
     }
 
     public virtual void AttackPlayer()
