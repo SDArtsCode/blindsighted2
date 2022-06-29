@@ -1820,6 +1820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options: {fileID: 1342002505}
   mainMenu: {fileID: 466814146}
+  settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
 --- !u!1 &1107576986
 GameObject:
   m_ObjectHideFlags: 0
@@ -4395,22 +4396,6 @@ PrefabInstance:
     - target: {fileID: 4094942199517052515, guid: 555579357be416047b19c5e30dac019f, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094942199517052515, guid: 555579357be416047b19c5e30dac019f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094942201158413810, guid: 555579357be416047b19c5e30dac019f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094942201158413810, guid: 555579357be416047b19c5e30dac019f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094942201158413813, guid: 555579357be416047b19c5e30dac019f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555579357be416047b19c5e30dac019f, type: 3}

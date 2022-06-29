@@ -5,10 +5,19 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject options;
     [SerializeField] GameObject mainMenu;
+    [SerializeField] Settings settings;
 
     public void StartGame()
     {
-        LevelLoader.instance.LoadLevel(1);
+        if (settings.lastSceneIndex > 0)
+        {
+            LevelLoader.instance.LoadLevel(1, settings.lastSceneIndex);
+        }
+        else
+        {
+            LevelLoader.instance.LoadLevel(1);
+        }
+       
         AudioManager.instance.Play("MenuGood");
     }
 

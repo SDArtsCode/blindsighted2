@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Musket
   m_EditorClassIdentifier: 
   weaponName: Musket
-  damage: 120
+  damage: 60
   fireRate: 0.5
   bulletSpeed: 150
-  reloadMultiplier: 0.5
+  reloadMultiplier: 1
   magSize: 1
   soundEffect: MegaGunShoot
   icon: {fileID: 0}

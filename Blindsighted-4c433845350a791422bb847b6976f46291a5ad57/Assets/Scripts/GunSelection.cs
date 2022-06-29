@@ -6,6 +6,7 @@ public class GunSelection : MonoBehaviour
 {
     [SerializeField] private Settings settings;
     private Transform[] gunButtons;
+    [SerializeField] bool midRound;
 
     private void Start()
     {
@@ -30,6 +31,14 @@ public class GunSelection : MonoBehaviour
     public void Loop()
     {
         settings.loop++;
-        LevelLoader.instance.LoadLevel(0, 1);
+
+        if (midRound)
+        {
+            LevelLoader.instance.LoadLevel(0, settings.lastSceneIndex);
+        }
+        else
+        {
+            LevelLoader.instance.LoadLevel(0, 1);
+        }        
     }
 }

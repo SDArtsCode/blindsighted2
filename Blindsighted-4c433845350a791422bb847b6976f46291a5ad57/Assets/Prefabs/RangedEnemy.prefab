@@ -200,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   detectionRange: 50
-  movementSpeed: 8
-  attackSpeed: 1
+  movementSpeed: 10
+  attackSpeed: 4
   layerMask:
     serializedVersion: 2
     m_Bits: 776
@@ -210,7 +210,7 @@ MonoBehaviour:
   minAttackDistance: 60
   attackBuildUp: 1
   attackDelay: 5
-  bulletVelocity: 70
+  bulletVelocity: 75
   ambience: {fileID: 5108903088529139264}
   ambienceDelay: 5
   rampUp: {fileID: 4884125480511759474}

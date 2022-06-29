@@ -52,6 +52,9 @@ public class UIController : MonoBehaviour
 
     public void PlayerDeath()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         reticle.SetActive(false);
         deathScreen.SetActive(true);
         dead = true;

@@ -10,6 +10,8 @@ public class LevelLoader : MonoBehaviour
     public Animator whiteToBlack;
     public Animator blackToWhite;
 
+    [SerializeField] Settings settings;
+
     private void Awake()
     {
         instance = this;
@@ -79,6 +81,8 @@ public class LevelLoader : MonoBehaviour
 
     private void SetTransition(int transitionIndex)
     {
+        settings.lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if(transitionIndex == 0)
         {
             whiteToBlack.gameObject.SetActive(true);

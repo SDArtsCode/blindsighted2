@@ -11,5 +11,6 @@ public class Settings : ScriptableObject
 
     //game data
     public int loop;
+    public int lastSceneIndex;
     public Weapon weapon;
 }

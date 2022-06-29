@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteToBlack: {fileID: 4094942200937705802}
   blackToWhite: {fileID: 6367505674460505843}
+  settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
 --- !u!1 &4094942200937705800
 GameObject:
   m_ObjectHideFlags: 0

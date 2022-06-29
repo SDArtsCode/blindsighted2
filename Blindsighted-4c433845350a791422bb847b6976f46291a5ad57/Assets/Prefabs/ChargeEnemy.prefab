@@ -222,8 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   detectionRange: 60
-  movementSpeed: 8
-  attackSpeed: 20
+  movementSpeed: 10
+  attackSpeed: 21
   layerMask:
     serializedVersion: 2
     m_Bits: 776
