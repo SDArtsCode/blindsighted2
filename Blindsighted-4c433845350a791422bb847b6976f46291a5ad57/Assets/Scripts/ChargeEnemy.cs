@@ -13,7 +13,15 @@ public class ChargeEnemy : EnemyAI
     [SerializeField] float ambienceDelay;    
     [SerializeField] AudioSource ambience;
     [SerializeField] AudioSource charge;
+    private Animator anim;
     bool canAttack = true;
+
+    public override void Start()
+    {
+        base.Start();
+
+        anim = GetComponent<Animator>();
+    }
 
     public override void Update()
     {
@@ -48,10 +56,16 @@ public class ChargeEnemy : EnemyAI
         charge.loop = true;
         agent.speed = attackSpeed;
 
+        anim.SetBool("Charging", true);
+        anim.SetBool("Idle", false);
+
         yield return new WaitForSeconds(maxChargeTimer);
         
         charge.loop = false;
         agent.speed = movementSpeed;
+
+        anim.SetBool("Charging", false);
+        anim.SetBool("Idle", true);
 
         yield return new WaitForSeconds(chargeDelay);
 

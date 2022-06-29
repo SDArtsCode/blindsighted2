@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 509128080524736423, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af2f7c0b583eeda4fba91f112c0943c1, type: 2}
+    - target: {fileID: 509128080524736424, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: b66f67c04edc9cb498e4cd94cce91736, type: 3}
+    - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 509128080524736425, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 509128080575376837, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_Name
       value: ChargeEnemy
@@ -150,6 +174,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 509128080524736421, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
   m_PrefabInstance: {fileID: 730045307435899824}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &8685201005136521664
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950660965046823957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: b66f67c04edc9cb498e4cd94cce91736, type: 3}
+--- !u!95 &2791440438695347469
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950660965046823957}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5963856949908420508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +223,7 @@ MonoBehaviour:
   damage: 50
   detectionRange: 60
   movementSpeed: 8
-  attackSpeed: 17
+  attackSpeed: 20
   layerMask:
     serializedVersion: 2
     m_Bits: 776

@@ -24,6 +24,7 @@ public class GunSelection : MonoBehaviour
     public void SetGun(Weapon weapon)
     {
         settings.weapon = weapon;
+        AudioManager.instance.Play("MenuAffirmative");
     }
 
     public void Loop()

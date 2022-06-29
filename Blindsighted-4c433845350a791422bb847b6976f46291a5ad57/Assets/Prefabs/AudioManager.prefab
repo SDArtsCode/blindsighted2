@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7950094f4c93fa47a25d907f169672d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  am: {fileID: 24100000, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
   sounds:
   - source: {fileID: 0}
     name: GunShoot
@@ -87,3 +89,38 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: PlayerHit
+    clip: {fileID: 8300000, guid: ee57eec47b7899848b601a2251f1fa35, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: Whispers
+    clip: {fileID: 8300000, guid: 408403da16745494e87bb321f5ac0068, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: GameOver
+    clip: {fileID: 8300000, guid: df64f2334cbff0c49a4437bed73fe356, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: MenuAffirmative
+    clip: {fileID: 8300000, guid: d6e5052055c011348b185923a757a7f3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: MenuGood
+    clip: {fileID: 8300000, guid: 870d21a4a3a4efb48b55fa56cfb3ab14, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
