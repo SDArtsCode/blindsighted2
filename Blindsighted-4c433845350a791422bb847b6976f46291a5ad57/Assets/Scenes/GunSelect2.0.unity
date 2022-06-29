@@ -1326,30 +1326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[16].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 585f045e2b7c19d47b6220e34d64fdce, type: 3}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[16].name
-      value: MenuBad
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[16].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[16].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296053018332180281, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
-      propertyPath: sounds.Array.data[16].audioMixer
-      value: 
-      objectReference: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5d03b4a0888a14f9a9c2080266f9d6, type: 3}
 --- !u!114 &1436172811 stripped
