@@ -43,8 +43,6 @@ public class FlareController : MonoBehaviour
             flares.RemoveAt(0);
         }
 
-        Debug.Log(flares.Count);
-
         currentTime = 0;
 
         var flare = Instantiate(flarePrefab, flareOrigin.transform.position, Quaternion.identity);

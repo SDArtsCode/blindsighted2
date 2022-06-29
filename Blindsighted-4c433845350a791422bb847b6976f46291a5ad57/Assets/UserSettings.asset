@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: UserSettings
   m_EditorClassIdentifier: 
   masterVolume: 1
-  musicVolume: 0.5
+  musicVolume: 1
   sfxVolume: 1
   ambienceVolume: 1
   loop: 0
-  weapon: {fileID: 11400000, guid: 69ee87fb16935f249af4037cd9ebe083, type: 2}
+  weapon: {fileID: 11400000, guid: 5eb5bad2da871be47b6a8bb4c5b43a3f, type: 2}

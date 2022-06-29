@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a9f664533940f45b5b53e2fcfe7aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRange: 200
+  maxRange: 100
   brightTime: 5
   fadeTime: 27
   decreaseSpeed: 0.05
@@ -275,7 +275,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 200
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
