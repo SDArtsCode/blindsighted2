@@ -51,6 +51,15 @@ public class TextDisplayer : MonoBehaviour
             yield return new WaitForSeconds(sentenceDelay);
         }
 
+        if(settings.loop == 4)
+        {
+            yield return new WaitForSeconds(4f);
+
+            AudioManager.instance.Play("StabScream");
+
+            yield return new WaitForSeconds(9f);
+        }
+
         yield return new WaitForSeconds(endDelay);
 
 

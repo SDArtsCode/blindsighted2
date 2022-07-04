@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public abstract class Bullet : MonoBehaviour
 {
@@ -14,14 +15,13 @@ public abstract class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         ps = GetComponent<ParticleSystem>();
         mr = GetComponent<MeshRenderer>();
+
+        StartCoroutine(Predict());
     }
 
-    public virtual void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.tag == "Environment" || other.gameObject.tag == "Ground")
-        {
-            Explode();
-        }
+        StartCoroutine(Predict());
     }
 
     public void Explode()
@@ -29,5 +29,31 @@ public abstract class Bullet : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
+    }
+
+    IEnumerator Predict()
+    {
+        Vector3 prediction = transform.position + rb.velocity * Time.fixedDeltaTime;
+
+        RaycastHit hit2;
+        int layerMask = ~LayerMask.GetMask("Bullet");
+
+        if (Physics.Linecast(transform.position, prediction, out hit2, layerMask))
+        {
+            transform.position = hit2.point;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            rb.isKinematic = true;
+            yield return 0;
+            OnTriggerEnterFixed(hit2.collider);
+        }
+
+    }
+
+    public virtual void OnTriggerEnterFixed(Collider other)
+    {
+        if(other.CompareTag("Environment") || other.CompareTag("Ground"))
+        {
+            Explode();
+        }
     }
 }

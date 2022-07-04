@@ -10,8 +10,6 @@ public class MouseVision : MonoBehaviour
 
     public Transform camPivot;
 
-    public static bool locked = false;
-
     private void Awake()
     {
         PlayerHealth.onPlayerDeath += OnPlayerDeath;
@@ -23,10 +21,9 @@ public class MouseVision : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!locked)
+        if (!UIController.playerLocked)
         {
             float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -43,6 +40,6 @@ public class MouseVision : MonoBehaviour
 
     void OnPlayerDeath()
     {
-        mouseSensitivity /= 4f;
+        mouseSensitivity /= 8f;
     }
 }

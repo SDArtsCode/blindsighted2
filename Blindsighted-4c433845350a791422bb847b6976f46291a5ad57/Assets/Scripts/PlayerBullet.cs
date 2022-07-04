@@ -9,9 +9,9 @@ public class PlayerBullet : Bullet
         damage = Gun.currentWeapon.damage;
     }
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnterFixed(Collider other)
     {
-        base.OnTriggerEnter(other);
+        base.OnTriggerEnterFixed(other);
 
         if (other.CompareTag("Enemy"))
         {

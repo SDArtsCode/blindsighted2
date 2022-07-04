@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controls;
     private Animator anim;
 
-    [SerializeField] private float speed = 8;
+    [SerializeField] private float baseSpeed = 8;
+    float modifiedSpeed;
+    float speed;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2.5f;
     [SerializeField] private Transform groundCheck;
@@ -19,11 +21,11 @@ public class PlayerMovement : MonoBehaviour
     public static Vector3 playerPosition;
 
     [SerializeField] private float dashTime = 1.5f;
-    [SerializeField] private float dashSpeed = 3f;
+    [SerializeField] private float dashMultiplier = 3f;
+    float dashSpeed;
     float time = 0.0f;
     bool canDash = true;
     bool dashing = false;
-    public static bool locked;
 
     private void Awake()
     {
@@ -35,19 +37,27 @@ public class PlayerMovement : MonoBehaviour
     {
         controls = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        speed = baseSpeed;
+        modifiedSpeed = speed;
     }
 
     void Update()
     {
-        if (!locked)
+
+        if (!UIController.playerLocked)
         {
             if (dashing == true)
             {
+                speed = modifiedSpeed * dashMultiplier;
                 if (time >= 0.1f)
-                {
-                    speed /= dashSpeed;
+                { 
                     dashing = false;
                 }
+            }
+            else
+            {
+                speed = modifiedSpeed;
             }
             if (canDash == false)
             {
@@ -82,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Dash") && canDash)
             {
                 AudioManager.instance.Play("Dash");
-                speed *= dashSpeed;
                 canDash = false;
                 dashing = true;
 
@@ -103,14 +112,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnPlayerHit()
+    void OnPlayerHit(float health)
     {
-        speed /= 2.5f;
+        modifiedSpeed = baseSpeed * (Mathf.Pow(1.02467f, -(health - 3.7511f)) + 0.904256f);
+        Debug.Log(modifiedSpeed);
     }
 
     void OnPlayerDeath()
     {
-        speed /= 3;
+        modifiedSpeed /= 10;
     }
 
     private void OnDrawGizmos()

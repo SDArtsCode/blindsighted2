@@ -54,7 +54,7 @@ public class RangedEnemy : EnemyAI
         base.NavigateToPlayer();
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, (PlayerMovement.playerPosition - transform.position).normalized, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(detectionOrigin.position, (PlayerMovement.playerPosition - detectionOrigin.position).normalized, out hit, Mathf.Infinity, layerMask))
         {
             if (hit.collider.gameObject.tag == "Player" && Mathf.Abs(Vector3.Distance(transform.position, PlayerMovement.playerPosition)) < minAttackDistance && canAttack)
             {

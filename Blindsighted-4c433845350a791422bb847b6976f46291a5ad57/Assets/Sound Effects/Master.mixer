@@ -88,11 +88,11 @@ AudioMixerController:
   - guid: 9b1e1907efd32b243822937537ae3620
     name: MasterVolume
   - guid: 06bc98fa6242b654e9120fda17f30dc3
-    name: LowpassFrequency
+    name: MasterLowpass
   - guid: 260cafb51493ebc4d86820234e6ccf57
     name: MusicVolume
   - guid: 179a7c7849401534c9ca2762a9f56a4a
-    name: Lowpass
+    name: MusicLowpass
   - guid: cf881232359c7874fbfe56853de1e71d
     name: SFXVolume
   m_AudioMixerGroupViews:
@@ -154,7 +154,7 @@ AudioMixerSnapshotController:
     9b1e1907efd32b243822937537ae3620: 3.2036507
     c1385b38ebbf9dc4aaaf14b30b452cfa: 1
     3cfaf24a5f4c18d49bfebd56937bbff3: 429
-    06bc98fa6242b654e9120fda17f30dc3: 6353
+    06bc98fa6242b654e9120fda17f30dc3: 5500
     6e3dfaeb55e194a47b1c8e0cf9e4e532: 0.99160004
   m_TransitionOverrides: {}
 --- !u!244 &1760724718283484136

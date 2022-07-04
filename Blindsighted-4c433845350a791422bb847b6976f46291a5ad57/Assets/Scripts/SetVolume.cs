@@ -8,7 +8,7 @@ public class SetVolume : MonoBehaviour
     [SerializeField] Settings settings;
     Slider[] sliders = new Slider[4];
 
-    private void Start()
+    private void Awake()
     {
         for(int i = 0; i < sliders.Length; i++)
         {
@@ -25,25 +25,25 @@ public class SetVolume : MonoBehaviour
     {
         float volume = Mathf.Log10(sliderValue) * 20;
         mixer.SetFloat("MasterVolume", volume);
-        settings.masterVolume = volume;
+        settings.masterVolume = sliderValue ;
     }
 
     public void SetMusic(float sliderValue)
     {
         float volume = Mathf.Log10(sliderValue) * 20;
         mixer.SetFloat("MusicVolume", volume);
-        settings.musicVolume = volume;
+        settings.musicVolume = sliderValue;
     }
     public void SetSFX(float sliderValue)
     {
         float volume = Mathf.Log10(sliderValue) * 20;
         mixer.SetFloat("SFXVolume", volume);
-        settings.sfxVolume = volume;
+        settings.sfxVolume = sliderValue;
     }
     public void SetAmbience(float sliderValue)
     {
         float volume = Mathf.Log10(sliderValue) * 20;
         mixer.SetFloat("AmbienceVolume", volume);
-        settings.ambienceVolume = volume;
+        settings.ambienceVolume = sliderValue;
     }
 }

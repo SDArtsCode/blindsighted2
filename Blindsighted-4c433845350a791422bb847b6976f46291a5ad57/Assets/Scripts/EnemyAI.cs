@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     public float attackSpeed = 16f;
     public LayerMask layerMask;
     [HideInInspector] public NavMeshAgent agent;
+    [SerializeField] public Transform detectionOrigin;
     Collider col;
 
     [HideInInspector] public EnemyState state = EnemyState.Detection;
@@ -52,7 +53,7 @@ public class EnemyAI : MonoBehaviour
     public virtual void DetectPlayer()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, (PlayerMovement.playerPosition - transform.position).normalized, out hit, detectionRange, layerMask))
+        if(Physics.Raycast(detectionOrigin.position, (PlayerMovement.playerPosition - detectionOrigin.position).normalized, out hit, detectionRange, layerMask))
         {
             if(hit.collider.gameObject.tag == "Player")
             {
@@ -74,7 +75,8 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-
+        Debug.DrawRay(detectionOrigin.position, PlayerMovement.playerPosition - detectionOrigin.position, Color.red);
+        
     }
 
     IEnumerator DisableCollider()

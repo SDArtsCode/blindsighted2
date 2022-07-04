@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] Settings settings;
 
     [SerializeField] Sound[] sounds;
+    AudioSource[] sources;
 
 
     void Awake()
@@ -44,10 +45,12 @@ public class AudioManager : MonoBehaviour
         am.SetFloat("MasterVolume", Mathf.Log10(settings.masterVolume) * 20);
         am.SetFloat("AmbienceVolume", Mathf.Log10(settings.ambienceVolume) * 20);
         am.SetFloat("SFXVolume", Mathf.Log10(settings.sfxVolume) * 20);
-        am.SetFloat("MusicVolume", Mathf.Log10(settings.musicVolume) * 20);
+        am.SetFloat("MusicVolume", Mathf.Log10(settings.musicVolume)* 20);
 
         Stop("Whispers");
         Stop("GameOver");
+
+        sources = gameObject.GetComponents<AudioSource>();
     }
 
     public void Play(string name)
@@ -69,6 +72,17 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Stop();
+    }
+
+    public AudioSource GetSource(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Source: " + name + " not found");
+            return null;
+        }
+        return s.source;
     }
 }
 

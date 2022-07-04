@@ -673,15 +673,23 @@ MonoBehaviour:
   - sentences:
     - So close yet so far...
     - You are but a mouse in a maze.
+    - How entertaining!
   - sentences:
     - You have earned this fate.
     - Your suffering is eternal.
+    - You are far from escape.
   - sentences:
     - You are beginning to bore me.
     - Let's stop this silly game.
+    - You haven't even seen the worst of it.
   - sentences:
-    - Get out of my sight.
-    - Filth.
+    - You will never escape.
+    - I can't let you leave.
+    - I'd rather kill you.
+    - But I suppose...
+    - for you...
+    - death is only a new beginning.
+    - See you soon.
   textDelay: 0.15
   sentenceDelay: 1
   startDelay: 1

@@ -12,8 +12,12 @@ public class UIController : MonoBehaviour
     bool dead;
     bool paused;
 
+    public static bool playerLocked;
+
     private void Start()
     {
+        playerLocked = false;
+
         PlayerHealth.onPlayerHit += PlayerHit;
         PlayerHealth.onPlayerDeath += PlayerDeath;
         
@@ -41,10 +45,12 @@ public class UIController : MonoBehaviour
             if (paused)
             {
                 UnpauseGame();
+                playerLocked = false;
             }
             else
             {
                 PauseGame();
+                playerLocked = true;
             }   
         }
 
@@ -60,27 +66,27 @@ public class UIController : MonoBehaviour
         dead = true;
     }
 
-    public void PlayerHit()
+    public void PlayerHit(float health)
     {
         hurtScreen.SetActive(true);
     }
 
     void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         paused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        PlayerMovement.locked = true;
-        MouseVision.locked = true;
     }
 
     void UnpauseGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         paused = false;
         Time.timeScale = 1f;
-        PlayerMovement.locked = false;
-        MouseVision.locked = false;
     }
 
     private void OnDestroy()

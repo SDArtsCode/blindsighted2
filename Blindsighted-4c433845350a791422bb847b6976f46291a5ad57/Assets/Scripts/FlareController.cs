@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class FlareController : MonoBehaviour
 {
+    public static event Action<int> onFlareShot;
+
+
     [SerializeField] GameObject flarePrefab;
     [SerializeField] Transform flareOrigin;
     [SerializeField] float flareDelay;
@@ -10,6 +14,9 @@ public class FlareController : MonoBehaviour
     [SerializeField] float launchVelocity;
     [SerializeField] float launchAngularVelocity;
     private List<GameObject> flares = new List<GameObject>();
+    
+    [SerializeField] Settings settings;
+    int flaresLeft;
 
     [SerializeField] Transform fpsCam;
 
@@ -22,12 +29,16 @@ public class FlareController : MonoBehaviour
 
     private void Start()
     {
+        flaresLeft = settings.flareCount;
+
+        onFlareShot(flaresLeft);
+
         currentTime = flareDelay;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && currentTime > flareDelay && !dead)
+        if (Input.GetMouseButtonDown(1) && currentTime > flareDelay && !dead && flaresLeft > 0)
         {
             LaunchFlare();
         }
@@ -37,6 +48,9 @@ public class FlareController : MonoBehaviour
 
     void LaunchFlare()
     {
+        flaresLeft--;
+        onFlareShot(flaresLeft);
+
         if(flares.Count + 1 > 3)
         {
             Destroy(flares[0]);

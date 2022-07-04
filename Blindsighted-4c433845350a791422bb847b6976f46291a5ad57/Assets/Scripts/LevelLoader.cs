@@ -72,8 +72,9 @@ public class LevelLoader : MonoBehaviour
 
         whiteToBlack.SetTrigger("Start");
 
-        yield return new WaitForSeconds(whiteToBlack.GetCurrentAnimatorStateInfo(0).length + 0.25f);
+        yield return new WaitForSecondsRealtime(whiteToBlack.GetCurrentAnimatorStateInfo(0).length + 0.25f);
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(levelIndex);
     }
 
@@ -83,8 +84,9 @@ public class LevelLoader : MonoBehaviour
 
         blackToWhite.SetTrigger("Start");
 
-        yield return new WaitForSeconds(blackToWhite.GetCurrentAnimatorStateInfo(0).length + 0.25f);
+        yield return new WaitForSecondsRealtime(blackToWhite.GetCurrentAnimatorStateInfo(0).length + 0.25f);
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(levelIndex);
     }
 

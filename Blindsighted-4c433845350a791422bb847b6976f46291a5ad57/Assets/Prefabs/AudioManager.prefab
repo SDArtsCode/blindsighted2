@@ -90,13 +90,6 @@ MonoBehaviour:
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
-    name: FlareShoot
-    clip: {fileID: 8300000, guid: 6e776896c08cb674db4c58a419a6672d, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  - source: {fileID: 0}
     name: MenuAffirmative
     clip: {fileID: 8300000, guid: d6e5052055c011348b185923a757a7f3, type: 3}
     volume: 1
@@ -112,10 +105,10 @@ MonoBehaviour:
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: Whispers
-    clip: {fileID: 8300000, guid: 408403da16745494e87bb321f5ac0068, type: 3}
+    clip: {fileID: 8300000, guid: 157556c2532f4e541b10260cbd4d7424, type: 3}
     volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: PlayerHit
@@ -163,6 +156,13 @@ MonoBehaviour:
     name: MenuBad
     clip: {fileID: 8300000, guid: 585f045e2b7c19d47b6220e34d64fdce, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
+  - source: {fileID: 0}
+    name: StabScream
+    clip: {fileID: 8300000, guid: 0d98506f5128068428af621ef37b2bc7, type: 3}
+    volume: 0.6
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}

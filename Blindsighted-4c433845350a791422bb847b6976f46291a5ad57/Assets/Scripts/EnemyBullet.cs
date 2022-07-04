@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class EnemyBullet : Bullet
 {
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnterFixed(Collider other)
     {
-        base.OnTriggerEnter(other);
+        base.OnTriggerEnterFixed(other);
 
         if (other.CompareTag("Player"))
         {

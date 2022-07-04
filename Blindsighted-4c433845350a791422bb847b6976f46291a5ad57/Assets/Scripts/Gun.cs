@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class Gun : MonoBehaviour
 {
 
-    const string audType = "Lowpass";
+    const string audType = "MusicLowpass";
     const float AUDMAX = 22000f;
     const float AUDMIN = 1000f;
     const float AUDMOD = 1.003f;
@@ -65,13 +65,13 @@ public class Gun : MonoBehaviour
             gunOrigin = GameObject.FindWithTag("GunOrigin").transform;
         }
 
-        if (!dead)
+        if (!UIController.playerLocked && !dead)
         {
             if (Input.GetButton("Fire1"))
             {
                 if (nextTimeToFire > 0 && ammoInGun > 0 && !isReloading)
                 {
-                    nextTimeToFire =  -1f / currentWeapon.fireRate;
+                    nextTimeToFire = -1f / currentWeapon.fireRate;
                     Shoot();
                 }
                 else if (nextTimeToFire >= 0 && ammoInGun <= 0 && !isReloading)
@@ -86,15 +86,15 @@ public class Gun : MonoBehaviour
                     Reload();
                 }
             }
-        }
 
-        nextTimeToFire += Time.deltaTime;
+            nextTimeToFire += Time.deltaTime;
+        }     
     }
 
     void Shoot()
     {
         ammoInGun--;
-        anim.speed = currentWeapon.fireRate;
+        anim.SetFloat("FiringSpeed", currentWeapon.fireRate);
         anim.SetTrigger("Fire");
     
         muzzleFlash.Play();
@@ -143,7 +143,7 @@ public class Gun : MonoBehaviour
     public void ReloadFinished()
     {
         isReloading = false;
-
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         ammoInGun = currentWeapon.magSize;
     }
 

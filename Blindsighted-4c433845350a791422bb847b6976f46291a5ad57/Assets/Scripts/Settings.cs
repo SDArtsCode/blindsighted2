@@ -13,4 +13,5 @@ public class Settings : ScriptableObject
     public int loop;
     public int lastSceneIndex;
     public Weapon weapon;
+    public int flareCount = 4;
 }
