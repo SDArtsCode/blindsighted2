@@ -15,11 +15,8 @@ public class HurtUI : MonoBehaviour
 
     private void SetScale(float health)
     {
-        Debug.Log(health);
-
         float scale = Mathf.Lerp(1, 2, health / 100);
 
-        Debug.Log(scale);
         rt.localScale = new Vector3(scale, scale, scale);
     }
 

@@ -7,7 +7,6 @@ public class MouseVision : MonoBehaviour
 
     float rotateX = 0f;
     float rotateY = 0f;
-
     public Transform camPivot;
 
     private void Awake()
@@ -40,6 +39,6 @@ public class MouseVision : MonoBehaviour
 
     void OnPlayerDeath()
     {
-        mouseSensitivity /= 8f;
+        mouseSensitivity /= 10f;
     }
 }

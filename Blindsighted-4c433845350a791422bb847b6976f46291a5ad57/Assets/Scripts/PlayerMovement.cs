@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     float time = 0.0f;
     bool canDash = true;
     bool dashing = false;
+    bool dead;
 
     private void Awake()
     {
@@ -44,8 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        if (!UIController.playerLocked)
+        if (!UIController.playerLocked && !dead)
         {
             if (dashing == true)
             {
@@ -119,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnPlayerDeath()
     {
+        dead = true;
         modifiedSpeed /= 10;
     }
 

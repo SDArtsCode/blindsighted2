@@ -75,6 +75,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
+    
     IEnumerator BTWLevelTransition(int levelIndex)
     {
         settings.lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -88,17 +89,18 @@ public class LevelLoader : MonoBehaviour
         AudioManager.instance.Stop("GameOver");
         SceneManager.LoadScene(levelIndex);
     }
+    
 
     private void SetTransition(int transitionIndex)
     {
         if(transitionIndex == 0)
         {
             whiteToBlack.gameObject.SetActive(true);
-            blackToWhite.gameObject.SetActive(false);
+            blackToWhite.gameObject.SetActive(true);
         }
         else if(transitionIndex == 1)
         {
-            whiteToBlack.gameObject.SetActive(false);
+            whiteToBlack.gameObject.SetActive(true);
             blackToWhite.gameObject.SetActive(true);
         }
         LevelLoader.transitionIndex = transitionIndex;

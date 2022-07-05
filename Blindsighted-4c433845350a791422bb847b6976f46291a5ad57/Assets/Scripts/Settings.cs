@@ -13,5 +13,9 @@ public class Settings : ScriptableObject
     public int loop;
     public int lastSceneIndex;
     public Weapon weapon;
+
+
+    //difficulty level
     public int flareCount = 4;
+    public int tokens = 0;
 }

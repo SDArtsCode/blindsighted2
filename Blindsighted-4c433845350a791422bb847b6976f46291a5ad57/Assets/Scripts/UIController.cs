@@ -34,26 +34,27 @@ public class UIController : MonoBehaviour
         if (dead)
         {
             respawnTimer -= Time.deltaTime;
-            if(respawnTimer < 0)
+            if (respawnTimer < 0)
             {
                 LevelLoader.instance.LoadLevel(0, -1);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
+        else
         {
-            if (paused)
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
             {
-                UnpauseGame();
-                playerLocked = false;
+                if (paused)
+                {
+                    UnpauseGame();
+                    playerLocked = false;
+                }
+                else
+                {
+                    PauseGame();
+                    playerLocked = true;
+                }
             }
-            else
-            {
-                PauseGame();
-                playerLocked = true;
-            }   
         }
-
     }
 
     public void PlayerDeath()
