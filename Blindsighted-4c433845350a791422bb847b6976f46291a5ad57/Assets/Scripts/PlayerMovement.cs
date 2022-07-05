@@ -115,7 +115,6 @@ public class PlayerMovement : MonoBehaviour
     void OnPlayerHit(float health)
     {
         modifiedSpeed = baseSpeed * (Mathf.Pow(1.02467f, -(health - 3.7511f)) + 0.904256f);
-        Debug.Log(modifiedSpeed);
     }
 
     void OnPlayerDeath()

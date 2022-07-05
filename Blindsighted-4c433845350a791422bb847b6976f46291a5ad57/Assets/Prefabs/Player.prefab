@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0.56, y: -0.48, z: 0.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8255999464865230487}
   m_Father: {fileID: 8688042279849661787}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,6 +57,8 @@ MonoBehaviour:
     m_Bits: 448
   fpsCam: {fileID: 6153139044341406257}
   flashAnim: {fileID: 7543607109168504890}
+  hackOrigin: {fileID: 8255999464865230487}
+  hackRadius: 2.25
 --- !u!95 &2693108105744485475
 Animator:
   serializedVersion: 4
@@ -174,6 +177,37 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3648786752589535079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8255999464865230487}
+  m_Layer: 9
+  m_Name: HackOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8255999464865230487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648786752589535079}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.658, y: -0.28, z: 0.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2808261921015247280}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3677617792200752238
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 1000
+  currentHealth: 100
   dead: 0
   am: {fileID: 24100000, guid: ace0df12abd7815468c9249326aefd97, type: 2}
 --- !u!114 &6153139043696408710
@@ -380,7 +414,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   dashTime: 1.5
-  dashSpeed: 5
+  dashMultiplier: 3
 --- !u!114 &1735807628
 MonoBehaviour:
   m_ObjectHideFlags: 0

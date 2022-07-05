@@ -6,8 +6,7 @@ public class PlayerHealth : Health
 {
     const string audType = "MasterLowpass";
     const float AUDMAX = 5500f;
-    const float AUDMIN = 1000f;
-    const float AUDMOD = 1.01f;
+    const float AUDMIN = 500f;
 
     public static event Action onPlayerDeath;
     public static event Action<float> onPlayerHit;
@@ -39,17 +38,14 @@ public class PlayerHealth : Health
                 AudioManager.instance.Play("PlayerHit");
                 AudioManager.instance.Play("Whispers");
 
-                AudioManager.instance.GetSource("Whispers").volume = Mathf.Lerp(1.2f, 0.15f, currentHealth / maxHealth);
+                AudioManager.instance.GetSource("Whispers").volume = Mathf.Lerp(1f, 0f, currentHealth / maxHealth);
                 am.SetFloat(audType, Mathf.Lerp(AUDMIN, AUDMAX, currentHealth/maxHealth));
             }
         }
-       
     }
 
     private void OnDestroy()
     {
-        AudioManager.instance.Stop("Whispers");
-        AudioManager.instance.Stop("GameOver");
         am.SetFloat(audType, AUDMAX);
     }
 }

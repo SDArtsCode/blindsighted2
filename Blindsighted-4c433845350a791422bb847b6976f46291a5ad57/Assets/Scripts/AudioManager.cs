@@ -47,9 +47,6 @@ public class AudioManager : MonoBehaviour
         am.SetFloat("SFXVolume", Mathf.Log10(settings.sfxVolume) * 20);
         am.SetFloat("MusicVolume", Mathf.Log10(settings.musicVolume)* 20);
 
-        Stop("Whispers");
-        Stop("GameOver");
-
         sources = gameObject.GetComponents<AudioSource>();
     }
 
@@ -61,7 +58,10 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name +  " not found");
             return;
         }
-        s.source.Play();
+        else
+        {
+            s.source.Play();
+        }
     }
     public void Stop(string name)
     {
@@ -71,7 +71,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found");
             return;
         }
-        s.source.Stop();
+        else
+        {
+            s.source.Stop();
+        }
+        
     }
 
     public AudioSource GetSource(string name)

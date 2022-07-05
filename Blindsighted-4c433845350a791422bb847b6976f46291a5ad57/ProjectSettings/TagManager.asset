@@ -8,6 +8,7 @@ TagManager:
   - GunOrigin
   - Ground
   - Environment
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField] Camera fpsCam;
     [SerializeField] Animator flashAnim;
+    [SerializeField] Transform hackOrigin;
+    [SerializeField] float hackRadius;
 
     bool dead;
 
@@ -57,10 +59,11 @@ public class Gun : MonoBehaviour
     {
         float value;
         masterMixer.GetFloat(audType, out value);
-        if(value > AUDMIN){
-          masterMixer.SetFloat(audType, value/AUDMOD);
+        if (value > AUDMIN)
+        {
+            masterMixer.SetFloat(audType, value / AUDMOD);
         }
-        if(gunOrigin == null)
+        if (gunOrigin == null)
         {
             gunOrigin = GameObject.FindWithTag("GunOrigin").transform;
         }
@@ -88,7 +91,7 @@ public class Gun : MonoBehaviour
             }
 
             nextTimeToFire += Time.deltaTime;
-        }     
+        }
     }
 
     void Shoot()
@@ -96,16 +99,28 @@ public class Gun : MonoBehaviour
         ammoInGun--;
         anim.SetFloat("FiringSpeed", currentWeapon.fireRate);
         anim.SetTrigger("Fire");
-    
+
         muzzleFlash.Play();
         masterMixer.SetFloat(audType, AUDMAX);
         flashAnim.SetTrigger("Flash");
         AudioManager.instance.Play(currentWeapon.soundEffect);
 
+        /*
+        Collider[] cols = Physics.OverlapSphere(hackOrigin.position, hackRadius, LayerMask.GetMask("Enemy"), QueryTriggerInteraction.Collide);
+        for (int i = 0; i < cols.Length; i++)
+        {
+            if (cols[i].CompareTag("Enemy"))
+            {
+                Debug.Log("Enemy damaged:" + cols[i].name);
+                cols[i].GetComponent<Health>().TakeDamage(currentWeapon.damage);
+                return;
+            }
+        }
+        */
+
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Mathf.Infinity, layerMask))
         {
             destination = hit.point;
         }
@@ -116,7 +131,7 @@ public class Gun : MonoBehaviour
 
         if (currentWeapon.name == "BlunderBuss")
         {
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
                 b.GetComponent<Rigidbody>().velocity = (Direction(destination, gunOrigin.transform.position) + new Vector3(Random.Range(-randomness, randomness), Random.Range(-randomness, randomness), Random.Range(-randomness, randomness))) * currentWeapon.bulletSpeed;
@@ -149,11 +164,16 @@ public class Gun : MonoBehaviour
 
     Vector3 Direction(Vector3 from, Vector3 to)
     {
-        return (from-to).normalized;
+        return (from - to).normalized;
     }
 
     void OnPlayerDeath()
     {
         dead = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(hackOrigin.position, hackRadius);
     }
 }

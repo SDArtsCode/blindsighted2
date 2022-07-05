@@ -46,7 +46,6 @@ public abstract class Bullet : MonoBehaviour
             yield return 0;
             OnTriggerEnterFixed(hit2.collider);
         }
-
     }
 
     public virtual void OnTriggerEnterFixed(Collider other)

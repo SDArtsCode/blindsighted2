@@ -402,7 +402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 509128080524736423, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_CastShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509128080524736423, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -604,6 +604,10 @@ PrefabInstance:
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[2].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
+    - target: {fileID: 6916927548327675511, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3367326304504717427, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
     - {fileID: 3142029418863501889, guid: df45c77c0b8b08b41ae43ab1b76caa4e, type: 3}
@@ -640,7 +644,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7a00804ca5893e0419f17a5032d468c0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

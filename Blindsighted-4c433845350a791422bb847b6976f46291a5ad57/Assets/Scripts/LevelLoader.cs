@@ -19,11 +19,6 @@ public class LevelLoader : MonoBehaviour
         SetTransition(transitionIndex);
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void LoadLevel(int transitionIndex, int sceneIndex)
     {
         SetTransition(transitionIndex);
@@ -75,6 +70,8 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSecondsRealtime(whiteToBlack.GetCurrentAnimatorStateInfo(0).length + 0.25f);
 
         Time.timeScale = 1;
+        AudioManager.instance.Stop("Whispers");
+        AudioManager.instance.Stop("GameOver");
         SceneManager.LoadScene(levelIndex);
     }
 
@@ -87,6 +84,8 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSecondsRealtime(blackToWhite.GetCurrentAnimatorStateInfo(0).length + 0.25f);
 
         Time.timeScale = 1;
+        AudioManager.instance.Stop("Whispers");
+        AudioManager.instance.Stop("GameOver");
         SceneManager.LoadScene(levelIndex);
     }
 
