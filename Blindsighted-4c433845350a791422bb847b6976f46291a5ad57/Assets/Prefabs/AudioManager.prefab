@@ -120,7 +120,7 @@ MonoBehaviour:
   - source: {fileID: 0}
     name: GameOver
     clip: {fileID: 8300000, guid: df64f2334cbff0c49a4437bed73fe356, type: 3}
-    volume: 1
+    volume: 0.4
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
