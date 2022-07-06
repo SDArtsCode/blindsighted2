@@ -1,18 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class RangedEnemy : EnemyAI
+public class SlamEnemy : EnemyAI
 {
     [SerializeField] float minAttackDistance = 60f;
-    [SerializeField] float attackBuildUp = 1.5f;
     [SerializeField] float attackDelay = 5.0f;
     [SerializeField] float bulletVelocity = 30f;
 
     [SerializeField] AudioSource ambience;
     [SerializeField] float ambienceDelay = 4.0f;
     float currentTime;
-    [SerializeField] AudioSource rampUp;
-    [SerializeField] Transform enemyProjectile;
+    [SerializeField] AudioSource charging;
+    [SerializeField] AudioSource attacking;
 
     [SerializeField] Material black;
     [SerializeField] Material outline;
@@ -35,7 +34,7 @@ public class RangedEnemy : EnemyAI
         base.Update();
 
         //plays ambience if not ramping up and delay has passed
-        if (currentTime < 0 && rampUp.isPlaying == false)
+        if (currentTime < 0 && charging.isPlaying == false)
         {
             ambience.Play();
             currentTime = ambienceDelay;
@@ -53,14 +52,11 @@ public class RangedEnemy : EnemyAI
     {
         base.NavigateToPlayer();
 
-        RaycastHit hit;
-        if (Physics.Raycast(detectionOrigin.position, (PlayerMovement.playerPosition - detectionOrigin.position).normalized, out hit, Mathf.Infinity, layerMask))
+        if (Mathf.Abs(Vector3.Distance(transform.position, PlayerMovement.playerPosition)) < minAttackDistance && canAttack)
         {
-            if (hit.collider.gameObject.tag == "Player" && Mathf.Abs(Vector3.Distance(transform.position, PlayerMovement.playerPosition)) < minAttackDistance && canAttack)
-            {
-                StartCoroutine(AttackSequence());
-            }
+            StartCoroutine(AttackSequence());
         }
+
     }
 
     IEnumerator AttackSequence()
@@ -69,20 +65,20 @@ public class RangedEnemy : EnemyAI
 
 
         //attack build up, speed reduced
-        anim.SetBool("Attacking", true);
+        anim.SetTrigger("Charge");
         mr.material = outline;
         agent.speed = attackSpeed;
-        rampUp.Play();
+        charging.Play();
 
-        yield return new WaitForSeconds(attackBuildUp);
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
 
-        //projectile fired
-        var projectile = Instantiate(enemyProjectile, transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody>().velocity = (PlayerMovement.playerPosition - transform.position).normalized * bulletVelocity;
+        attacking.Play();
+
+
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
 
         //speed restored
         agent.speed = movementSpeed;
-        anim.SetBool("Attacking", false);
         mr.material = black;
 
         yield return new WaitForSeconds(attackDelay);

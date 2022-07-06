@@ -4,6 +4,8 @@ Shader "Custom/SphereFresnel"
     {
         _Power("Power", Range(0, 10)) = 1
         _DitherPattern("Dither Pattern", 2D) = "white" {}
+        _NoisePattern("Noise Pattern", 2D) = "white" {}
+        _NoiseIntensity("Noise Intensity", Range(0,1)) = 1
     }
     SubShader
     {
@@ -33,6 +35,8 @@ Shader "Custom/SphereFresnel"
             float _Power;
             sampler2D _DitherPattern;
             float4 _DitherPattern_TexelSize;
+            sampler2D _NoisePattern;
+            float _NoiseIntensity;
 
             struct v2f
             {
@@ -55,17 +59,29 @@ Shader "Custom/SphereFresnel"
                 return o;
             }
 
+            float rand(float2 co)
+		    {
+			    return frac((sin( dot(co.xy , float2(12.345 * _Time.w, 67.890 * _Time.w) )) * 12345.67890+_Time.w));
+            }
+
+
             fixed4 frag (v2f i) : SV_Target
             {
+                
+                //dither
                 float2 screenPos = i.screenPosition.xy / i.screenPosition.w;
                 float2 ditherCoordinate = screenPos * _ScreenParams.xy * _DitherPattern_TexelSize.xy;
                 float ditherValue = tex2D(_DitherPattern, ditherCoordinate).r;
 
+                //fresnel
                 float fresnel = pow(1 - saturate(dot(i.normal, i.viewDir)),_Power);
+                
+                //noise 
+                float noise = step(tex2D(_NoisePattern, (screenPos * 3) + float2(rand(1), rand(1))).r, _NoiseIntensity);
+                
                 ditherValue = step(ditherValue, fresnel);
-
                
-                return ditherValue;
+                return ditherValue * noise;
             }
             ENDCG
         }

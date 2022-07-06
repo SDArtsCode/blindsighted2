@@ -10,6 +10,9 @@ Shader "Custom/Shockwave"
         _Falloff("Falloff", Range(0, 10)) = 4
 
         _DitherPattern("Dither Pattern", 2D) = "white" {}
+
+        _NoisePattern("Noise Pattern", 2D) = "white" {}
+        _NoiseIntensity("Noise Intensity", Range(0,1)) = 1
     }
     SubShader
     {
@@ -51,9 +54,12 @@ Shader "Custom/Shockwave"
             float _Width;
             float _Falloff;
 
-            float InverseLerp(float a, float b, float t)
-            {
-                return(t-a)/(b-a);
+            sampler2D _NoisePattern;
+            float _NoiseIntensity;
+
+             float rand(float2 co)
+		    {
+			    return frac((sin( dot(co.xy , float2(12.345 * _Time.w, 67.890 * _Time.w) )) * 12345.67890+_Time.w));
             }
 
             v2f vert (appdata v)
@@ -67,12 +73,9 @@ Shader "Custom/Shockwave"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                //float radialGradient = 1 - length(((i.uv * float2(2.0,2.0)) - float2(1.0, 1.0))) - _Threshold;
 
                 float radialGradient = 1 - length(i.uv);
                 float radialGradientScaled = 1 - pow(length(i.uv),_Falloff);
-
-                radialGradient = InverseLerp(0, 1, radialGradient);
 
                 float time = _Time.y;
                 float speed = 3.0;
@@ -86,8 +89,9 @@ Shader "Custom/Shockwave"
                 float ditherValue = tex2D(_DitherPattern, ditherCoordinate).r;
                 ditherValue = step(ditherValue, output);
 
-                //fixed4 col = tex2D(_MainTex, i.uv);
-                return ditherValue;
+                float noise = step(tex2D(_NoisePattern, (screenPos * 3) + float2(rand(1), rand(1))).r, _NoiseIntensity);
+
+                return ditherValue * noise;
             }
             ENDCG   
         }
