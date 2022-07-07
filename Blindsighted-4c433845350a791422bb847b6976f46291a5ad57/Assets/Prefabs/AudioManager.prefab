@@ -50,35 +50,35 @@ MonoBehaviour:
   - source: {fileID: 0}
     name: GunShoot
     clip: {fileID: 8300000, guid: 9a489eddafc31cd4897159c7c16de9b3, type: 3}
-    volume: 0.3
+    volume: 3
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: GunReload
     clip: {fileID: 8300000, guid: 7fc1aee222308044e8bb4dd4a4c620ee, type: 3}
-    volume: 0.3
+    volume: 3
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: MegaGunShoot
     clip: {fileID: 8300000, guid: 2bef87726f4c4c94aa0f58a6f38221a6, type: 3}
-    volume: 0.5
+    volume: 3
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: FastGunShoot
     clip: {fileID: 8300000, guid: 9a489eddafc31cd4897159c7c16de9b3, type: 3}
-    volume: 0.578
+    volume: 3
     pitch: 1.19
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
   - source: {fileID: 0}
     name: Dash
-    clip: {fileID: 8300000, guid: 9b600e5022f7db34fb9a5837cc70e521, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 554df6e804cc3334fb9a61dff6ee3029, type: 3}
+    volume: 3
     pitch: 1
     loop: 0
     audioMixer: {fileID: 8470423585785953401, guid: ace0df12abd7815468c9249326aefd97, type: 2}
