@@ -43,10 +43,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8401527894222163926, guid: ace0df12abd7815468c9249326aefd97, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e65bb6990293b53439e405492276edaa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1018b1b0df498d64199c519124c42be8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.11
-  m_Pitch: 1.25
+  m_Volume: 0.571
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ba7533d29151649868fc7afaf2cbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBumpin: 0
+  menuClip: {fileID: 8300000, guid: a6f87afacaf94d748994ae7bc3718d20, type: 3}
