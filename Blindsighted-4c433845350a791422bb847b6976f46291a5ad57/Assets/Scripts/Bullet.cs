@@ -36,12 +36,12 @@ public abstract class Bullet : MonoBehaviour
 
     IEnumerator Predict()
     {
-        Vector3 prediction = transform.position - rb.velocity * Time.fixedDeltaTime;
+        Vector3 prediction = rb.position + rb.velocity * Time.fixedDeltaTime;
 
         RaycastHit hit2;
-        int layerMask = ~LayerMask.GetMask("Bullet");
+        int layerMask = ~LayerMask.GetMask("Bullet", "Default");
 
-        if (Physics.Linecast(prediction, transform.position, out hit2, layerMask))
+        if (Physics.Linecast(rb.position, prediction, out hit2, layerMask))
         {
             transform.position = hit2.point;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
@@ -49,9 +49,8 @@ public abstract class Bullet : MonoBehaviour
             yield return 0;
             OnTriggerEnterFixed(hit2.collider);
         }
-
-        lastPosition = transform.position;
     }
+
 
     public virtual void OnTriggerEnterFixed(Collider other)
     {

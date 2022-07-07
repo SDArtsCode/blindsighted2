@@ -5,13 +5,13 @@ public class SlamEnemy : EnemyAI
 {
     [SerializeField] float minAttackDistance = 60f;
     [SerializeField] float attackDelay = 5.0f;
-    [SerializeField] float bulletVelocity = 30f;
 
     [SerializeField] AudioSource ambience;
     [SerializeField] float ambienceDelay = 4.0f;
     float currentTime;
     [SerializeField] AudioSource charging;
     [SerializeField] AudioSource attacking;
+    [SerializeField] AudioSource pulse;
 
     [SerializeField] Material black;
     [SerializeField] Material outline;
@@ -85,5 +85,11 @@ public class SlamEnemy : EnemyAI
 
         canAttack = true;
         yield break;
+    }
+
+    public void PulseSound()
+    {
+        pulse.Stop();
+        pulse.Play();
     }
 }

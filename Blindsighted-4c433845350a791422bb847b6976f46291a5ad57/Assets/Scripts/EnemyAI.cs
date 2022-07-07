@@ -19,6 +19,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] public Transform detectionOrigin;
     Collider col;
 
+    float timer;
+    bool canDamage = true;
+
     [HideInInspector] public EnemyState state = EnemyState.Detection;
 
     public virtual void Start()
@@ -39,14 +42,27 @@ public class EnemyAI : MonoBehaviour
                 NavigateToPlayer();
                 break;
         }
+
+        if (!canDamage)
+        {
+            timer += Time.deltaTime;
+            if(timer > 2)
+            {
+                timer = 0;
+                canDamage = true;
+            }
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (canDamage)
         {
-            other.GetComponent<PlayerHealth>().TakeDamage(damage);
-            StartCoroutine(DisableCollider());
+            if (other.gameObject.tag == "Player")
+            {
+                other.GetComponent<PlayerHealth>().TakeDamage(damage);
+                canDamage = false;
+            }
         }
     }
 
@@ -77,14 +93,5 @@ public class EnemyAI : MonoBehaviour
     {
         Debug.DrawRay(detectionOrigin.position, PlayerMovement.playerPosition - detectionOrigin.position, Color.red);
         
-    }
-
-    IEnumerator DisableCollider()
-    {
-        col.enabled = false;
-
-        yield return new WaitForSeconds(2);
-
-        col.enabled = true;
     }
 }

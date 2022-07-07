@@ -11,6 +11,8 @@ public class Settings : ScriptableObject
 
     //game data
     public int loop;
+    public int level;
+
     public int lastSceneIndex;
     public Weapon weapon;
 
@@ -18,4 +20,7 @@ public class Settings : ScriptableObject
     //difficulty level
     public int flareCount = 4;
     public int tokens = 0;
+
+    //level data
+    [NonReorderable] public LoopData[] loops = new LoopData[5];
 }

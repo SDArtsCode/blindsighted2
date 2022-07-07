@@ -17,6 +17,84 @@ MonoBehaviour:
   sfxVolume: 0.5
   ambienceVolume: 0.5
   loop: 0
-  lastSceneIndex: 4
+  level: 0
+  lastSceneIndex: 2
   weapon: {fileID: 11400000, guid: 5eb5bad2da871be47b6a8bb4c5b43a3f, type: 2}
   flareCount: 4
+  tokens: 4
+  loops:
+  - loopNumber: 1
+    levels:
+    - levelNumber: 1
+      maxSeconds: 100
+      thresholds:
+      - 70
+      - 50
+      - 40
+      - 30
+      - 0
+      playerSeconds: 21.168854
+    - levelNumber: 2
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 3
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+  - loopNumber: 2
+    levels:
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+  - loopNumber: 3
+    levels:
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+  - loopNumber: 4
+    levels:
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+  - loopNumber: 5
+    levels:
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0
+    - levelNumber: 0
+      maxSeconds: 0
+      thresholds: []
+      playerSeconds: 0

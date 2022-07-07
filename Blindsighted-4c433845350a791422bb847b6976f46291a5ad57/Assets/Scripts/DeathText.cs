@@ -17,6 +17,7 @@ public class DeathText : MonoBehaviour
 
     IEnumerator PrintText(string text)
     {
+        this.text.text = "";
         for(int i = 0; i < text.Length; i++)
         {
             this.text.text += text[i];
