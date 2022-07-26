@@ -21,6 +21,8 @@ public class Settings : ScriptableObject
     public int flareCount = 4;
     public int tokens = 0;
 
+    public int[] unlocks = { 1, 0, 0, 0 };
+
     //level data
     [NonReorderable] public LoopData[] loops = new LoopData[5];
 }

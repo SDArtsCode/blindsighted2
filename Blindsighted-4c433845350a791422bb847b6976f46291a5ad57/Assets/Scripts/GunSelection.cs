@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunSelection : MonoBehaviour
 {
@@ -19,15 +18,12 @@ public class GunSelection : MonoBehaviour
         {
             gunButtons[i] = transform.GetChild(i);
 
-            if (midRound)
+            Debug.Log(i);
+            if (settings.unlocks[i] == 0)
             {
-                gunButtons[i].gameObject.SetActive(i - 1 < settings.loop);
-            }
-            else
-            {
-                gunButtons[i].gameObject.SetActive(i - 1 <= settings.loop);
-            }
-            
+                gunButtons[i].GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, 1);
+                gunButtons[i].GetComponent<Button>().interactable = false;
+            } 
         }
     }
 

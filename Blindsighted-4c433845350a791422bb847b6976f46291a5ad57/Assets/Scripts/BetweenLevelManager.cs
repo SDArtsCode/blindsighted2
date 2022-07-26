@@ -16,7 +16,7 @@ public class BetweenLevelManager : MonoBehaviour
 
         levelText.text = (settings.loop+1) + " - " + (settings.level+1);
         timeText.text = ConvertToTime(settings.loops[settings.loop].levels[settings.level].playerSeconds);
-        tokensText.text = "" + GetTokens(settings.loops[settings.loop].levels[settings.level].playerSeconds);
+        tokensText.text = "+" + GetTokens(settings.loops[settings.loop].levels[settings.level].playerSeconds) + " (" + settings.tokens +  ")";
     }
 
     int GetTokens(float totalSeconds)
@@ -53,8 +53,9 @@ public class BetweenLevelManager : MonoBehaviour
 
     public void NextLevel()
     {
+        settings.level++;
         AudioManager.instance.Play("MenuAffirmative");
-        LevelLoader.instance.LoadLevel(0, settings.lastSceneIndex + 1);
+        LevelLoader.instance.LoadLevel(0, settings.level + 2);
     }
 
     public void ChangeWeapon()

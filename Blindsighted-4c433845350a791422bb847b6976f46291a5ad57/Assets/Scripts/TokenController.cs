@@ -33,6 +33,6 @@ public class TokenController : MonoBehaviour
 
     void LevelCompleted()
     {
-        settings.loops[settings.loop].levels[settings.level].playerSeconds = currentSeconds;
+        //settings.loops[settings.loop].levels[settings.level].playerSeconds = currentSeconds;
     }
 }
