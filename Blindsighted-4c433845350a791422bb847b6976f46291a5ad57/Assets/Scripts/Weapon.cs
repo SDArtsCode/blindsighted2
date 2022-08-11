@@ -8,6 +8,7 @@ public class Weapon : ScriptableObject
     public float fireRate;
     public float bulletSpeed;
     public float reloadMultiplier;
+    public float accuracy;
     public int magSize;
     public string soundEffect;
     public Sprite icon;

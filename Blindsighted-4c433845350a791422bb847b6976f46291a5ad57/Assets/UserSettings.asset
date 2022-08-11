@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c00665f3dd0bf042b1c249517f1c79f, type: 3}
   m_Name: UserSettings
   m_EditorClassIdentifier: 
-  masterVolume: 0.5
-  musicVolume: 0.13816476
-  sfxVolume: 0.5
-  ambienceVolume: 0.5
-  loop: 3
+  masterVolume: 1
+  musicVolume: 0.6
+  sfxVolume: 1
+  ambienceVolume: 1
+  loop: 0
   level: 0
-  lastSceneIndex: 7
+  lastSceneIndex: 2
   weapon: {fileID: 11400000, guid: 5eb5bad2da871be47b6a8bb4c5b43a3f, type: 2}
   flareCount: 4
-  tokens: 12
-  unlocks: 01000000000000000000000000000000
+  tokens: 164
+  unlocks: 00000000000000000000000000000000
   loops:
   - loopNumber: 1
     levels:

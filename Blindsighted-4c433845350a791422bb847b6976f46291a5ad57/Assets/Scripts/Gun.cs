@@ -134,14 +134,14 @@ public class Gun : MonoBehaviour
             for (int i = 0; i < 10; i++)
             {
                 var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
-                b.GetComponent<Rigidbody>().velocity = (Direction(destination, gunOrigin.transform.position) + new Vector3(Random.Range(-randomness, randomness), Random.Range(-randomness, randomness), Random.Range(-randomness, randomness))) * currentWeapon.bulletSpeed;
+                b.GetComponent<Rigidbody>().velocity = (Direction(destination, gunOrigin.transform.position) + new Vector3(Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy), Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy), Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy))) * currentWeapon.bulletSpeed;
                 Destroy(b, travelTime);
             }
         }
         else
         {
             var b = Instantiate(bullet, gunOrigin.transform.position, Quaternion.identity);
-            b.GetComponent<Rigidbody>().velocity = Direction(destination, gunOrigin.transform.position) * currentWeapon.bulletSpeed;
+            b.GetComponent<Rigidbody>().velocity = (Direction(destination, gunOrigin.transform.position) + new Vector3(Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy), Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy), Random.Range(-currentWeapon.accuracy, currentWeapon.accuracy))) * currentWeapon.bulletSpeed;
             Destroy(b, travelTime);
         }
     }

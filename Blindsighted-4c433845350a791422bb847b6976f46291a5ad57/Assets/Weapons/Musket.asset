@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Musket
   m_EditorClassIdentifier: 
   weaponName: Musket
-  damage: 60
-  fireRate: 0.5
+  damage: 80
+  fireRate: 0.7
   bulletSpeed: 150
   reloadMultiplier: 1
-  magSize: 1
+  accuracy: 0
+  magSize: 3
   soundEffect: MegaGunShoot
   icon: {fileID: 0}
   prefab: {fileID: 7908507811171303316, guid: e25f822afad33644bb62650225c999f8, type: 3}

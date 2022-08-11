@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: 
   weaponName: Tommy Gun
-  damage: 12
+  damage: 14
   fireRate: 4
   bulletSpeed: 90
   reloadMultiplier: 0.4
+  accuracy: 0.8
   magSize: 30
   soundEffect: FastGunShoot
   icon: {fileID: 0}

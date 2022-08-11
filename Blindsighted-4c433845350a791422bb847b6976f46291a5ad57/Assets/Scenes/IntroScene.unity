@@ -297,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &546228140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   textDelay: 0.15
   sentenceDelay: 1
   startDelay: 1
-  endDelay: 1
+  endDelay: 3
   settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
 --- !u!1 &969672797
 GameObject:
@@ -666,7 +666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1152493732
 AudioListener:
   m_ObjectHideFlags: 0
