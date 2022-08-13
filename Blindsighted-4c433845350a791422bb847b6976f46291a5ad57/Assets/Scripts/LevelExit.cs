@@ -14,7 +14,7 @@ public class LevelExit : MonoBehaviour
         {
             settings.level = SceneManager.GetActiveScene().buildIndex - 2;
             levelCompleted();
-            LevelLoader.instance.LoadLevel(1, 8);
+            LevelLoader.instance.LoadLevel(1, 7);
         }
     }
 }

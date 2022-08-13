@@ -71,7 +71,7 @@ public class TextDisplayer : MonoBehaviour
             }
             else
             {
-                LevelLoader.instance.LoadLevel(0);
+                LevelLoader.instance.LoadLevel(0,1);
             }
             
         }

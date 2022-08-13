@@ -1,10 +1,12 @@
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class TokenController : MonoBehaviour
 {
-    Image image;
+    [SerializeField] Image image;
     [SerializeField] float maxSeconds;
+    [SerializeField] TextMeshProUGUI text;
     float currentSeconds;
     [SerializeField] Settings settings;
 
@@ -20,7 +22,7 @@ public class TokenController : MonoBehaviour
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        maxSeconds = settings.loops[settings.loop].levels[settings.level].maxSeconds;
         currentSeconds = 0.001f;
     }
 
@@ -33,6 +35,6 @@ public class TokenController : MonoBehaviour
 
     void LevelCompleted()
     {
-        //settings.loops[settings.loop].levels[settings.level].playerSeconds = currentSeconds;
+        settings.loops[settings.loop].levels[settings.level].playerSeconds = currentSeconds;
     }
 }

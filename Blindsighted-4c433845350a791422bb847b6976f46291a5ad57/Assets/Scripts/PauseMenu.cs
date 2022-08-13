@@ -50,7 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void WeaponSelection()
     {
-        LevelLoader.instance.LoadLevel(0, 4);
+        LevelLoader.instance.LoadLevel(0, 6);
         AudioManager.instance.Play("MenuGood");
     }
 

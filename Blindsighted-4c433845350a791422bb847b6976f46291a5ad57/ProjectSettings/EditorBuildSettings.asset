@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/OutroScene.unity
     guid: 888fa38b3d2019c488c89dfd630d6345
   - enabled: 1
-    path: Assets/Scenes/SelectScene.unity
-    guid: 84277ef202c41a545b6bd1f1b9a6e4d8
-  - enabled: 1
     path: Assets/Scenes/GunSelect2.0.unity
     guid: 66cfb38aba8bd7f418985822af3452e8
   - enabled: 1

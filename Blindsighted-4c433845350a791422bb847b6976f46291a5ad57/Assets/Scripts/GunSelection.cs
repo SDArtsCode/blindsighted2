@@ -13,6 +13,7 @@ public class GunSelection : MonoBehaviour
     [SerializeField] bool midRound;
     int currentGunIndex;
     [SerializeField] Transform[] buttons;
+    public Sprite unlockedCard;
 
     private void Start()
     {
@@ -36,33 +37,33 @@ public class GunSelection : MonoBehaviour
         settings.weapon = guns[index];
         currentGunIndex = index;
         ResetUI();
+
+        transform.GetChild(currentGunIndex).GetComponent<Animator>().SetTrigger("Selected");
+        AudioManager.instance.Play("MenuGood");
     }
 
     public void Loop()
     {
-        if (midRound)
-        {
-            LevelLoader.instance.LoadLevel(0, settings.lastSceneIndex);
-        }
-        else
-        {
-            settings.loop++;
-            LevelLoader.instance.LoadLevel(0, 1);
-        }        
+        LevelLoader.instance.LoadLevel(0, settings.level + 2);
     }
 
-    void ResetUI()
+    public void ResetUI()
     {
         for(int i = 0; i < buttons.Length; i++)
         {
+            Debug.Log(transform.GetChild(i).GetComponent<Image>());
+            
 
-            if((settings.unlocks[i] == 0))
+            if ((settings.unlocks[i] == 0))
             {
                 buttons[i].GetChild(0).gameObject.SetActive(true);
                 buttons[i].GetChild(1).gameObject.SetActive(false);
             }
             else
             {
+                transform.GetChild(i).GetComponent<Image>().overrideSprite = unlockedCard;
+
+
                 buttons[i].GetChild(1).gameObject.SetActive(true);
                 buttons[i].GetChild(0).gameObject.SetActive(false);
 
@@ -82,16 +83,14 @@ public class GunSelection : MonoBehaviour
     {
         if (settings.tokens > gunCosts[index])
         {
-            AudioManager.instance.Play("MenuGood");
             settings.tokens -= gunCosts[index];
             tokenDisplay.text = "" + settings.tokens;
             settings.unlocks[index] = 1;    
             SetGun(index);
-            //play animation
         }
         else
         {
-            //AudioManager.instance.Play("MenuBad");
+            AudioManager.instance.Play("MenuBad");
         }
     }
 }
