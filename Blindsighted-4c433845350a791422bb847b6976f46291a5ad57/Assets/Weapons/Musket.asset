@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 80
   fireRate: 0.7
   bulletSpeed: 150
-  reloadMultiplier: 1
+  reloadMultiplier: 0.7
   accuracy: 0
   magSize: 3
   soundEffect: MegaGunShoot

@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public float damage = 50;
-    [SerializeField] private float detectionRange = 2;
+    [SerializeField] public float detectionRange = 2;
     public float movementSpeed = 8f;
     public float attackSpeed = 16f;
     public LayerMask layerMask;

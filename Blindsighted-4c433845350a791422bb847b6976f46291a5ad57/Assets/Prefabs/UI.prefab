@@ -1640,6 +1640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 3892540333961985283}
   maxSeconds: 100
+  text: {fileID: 8778251910297564881}
   settings: {fileID: 11400000, guid: ae8a591e3f77af342b42293d906d1920, type: 2}
 --- !u!1 &2090285759167644130
 GameObject:
@@ -7174,7 +7175,6 @@ MonoBehaviour:
   - Resistance is futile.
   - You are weak.
   - You scrawny little man.
-  - you're cute ;) uwu
   - Suffer.
   - I foresaw your failure.
   - You will pay for your sins.

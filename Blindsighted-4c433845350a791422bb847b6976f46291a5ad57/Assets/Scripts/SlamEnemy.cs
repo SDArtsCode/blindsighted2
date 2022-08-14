@@ -18,6 +18,8 @@ public class SlamEnemy : EnemyAI
     MeshRenderer mr;
     Animator anim;
 
+    bool first = true;
+
 
     bool canAttack = true;
 
@@ -45,24 +47,36 @@ public class SlamEnemy : EnemyAI
 
     public override void DetectPlayer()
     {
-        base.DetectPlayer();
+        RaycastHit hit;
+        if (Physics.Raycast(detectionOrigin.position, (PlayerMovement.playerPosition - detectionOrigin.position).normalized, out hit, detectionRange, layerMask))
+        {
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                state = EnemyState.Navigation;
+            }
+        }
     }
 
     public override void NavigateToPlayer()
     {
+        if (first)
+        {
+            first = false;  
+            StartCoroutine(AttackSequence());
+            return;
+        }
+
         base.NavigateToPlayer();
 
         if (Mathf.Abs(Vector3.Distance(transform.position, PlayerMovement.playerPosition)) < minAttackDistance && canAttack)
         {
             StartCoroutine(AttackSequence());
         }
-
     }
 
     IEnumerator AttackSequence()
     {
         canAttack = false;
-
 
         //attack build up, speed reduced
         anim.SetTrigger("Charge");

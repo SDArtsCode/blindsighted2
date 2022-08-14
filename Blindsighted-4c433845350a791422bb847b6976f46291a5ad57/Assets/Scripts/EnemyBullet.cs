@@ -11,5 +11,9 @@ public class EnemyBullet : Bullet
             other.GetComponent<Health>().TakeDamage(damage);
             Explode();
         }
+        else if (other.CompareTag("Enemy"))
+        {
+            Explode();
+        }
     }
 }

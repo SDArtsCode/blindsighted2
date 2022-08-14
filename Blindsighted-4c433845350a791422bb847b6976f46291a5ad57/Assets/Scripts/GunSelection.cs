@@ -50,10 +50,7 @@ public class GunSelection : MonoBehaviour
     public void ResetUI()
     {
         for(int i = 0; i < buttons.Length; i++)
-        {
-            Debug.Log(transform.GetChild(i).GetComponent<Image>());
-            
-
+        {   
             if ((settings.unlocks[i] == 0))
             {
                 buttons[i].GetChild(0).gameObject.SetActive(true);
@@ -77,6 +74,8 @@ public class GunSelection : MonoBehaviour
                 }
             }
         }
+
+        tokenDisplay.text = "" + settings.tokens;
     }
 
     public void PurchaseGun(int index)

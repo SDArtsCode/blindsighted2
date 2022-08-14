@@ -534,18 +534,16 @@ MonoBehaviour:
   textDisplay: {fileID: 676527943}
   text:
   - sentences:
-    - Escape.
+    - Escape
   - sentences:
-    - Escape?
-    - ESCAPE!
+    - Escape please
   - sentences:
-    - Escape...
-    - eScApE.!!!
+    - Why are you still here
   - sentences:
-    - escape escape escape
-    - escaaapapeee
+    - Your doom is approaching
+    - you should escape
   - sentences:
-    - DIE. DIE. DIE.
+    - Face your fate
   textDelay: 0.15
   sentenceDelay: 1
   startDelay: 1

@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906188072933254411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5483029516952049462}
@@ -100,7 +100,7 @@ MonoBehaviour:
   detectionOrigin: {fileID: 2461059282255836056}
   state: 0
   minAttackDistance: 10
-  attackDelay: 5
+  attackDelay: 3.5
   ambience: {fileID: 2693782802520856750}
   ambienceDelay: 4
   charging: {fileID: 2324881443382450844}

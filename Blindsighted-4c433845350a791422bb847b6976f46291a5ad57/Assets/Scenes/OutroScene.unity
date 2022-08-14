@@ -678,26 +678,27 @@ MonoBehaviour:
   textDisplay: {fileID: 1407769429}
   text:
   - sentences:
-    - You really thought it would be that easy?
-    - Pathetic.
+    - Welcome to Hell.
+    - Its personalized just for you.
+    - Enjoy your stay
   - sentences:
-    - So close yet so far...
-    - You are but a mouse in a maze.
-    - How entertaining!
+    - You really thought it would be that easy
+    - Good luck.
+    - Enjoy Eternity.
   - sentences:
     - You have earned this fate.
-    - Your suffering is eternal.
-    - You are far from escape.
+    - Recall your wrongdoings.
+    - You must atone.
   - sentences:
-    - You are beginning to bore me.
-    - Let's stop this silly game.
+    - Are you tired yet
+    - Lets stop this silly game.
     - You haven't even seen the worst of it.
   - sentences:
     - You will never escape.
     - I can't let you leave.
-    - I'd rather kill you.
-    - But I suppose...
-    - for you...
+    - Id rather kill you.
+    - But I suppose
+    - for you
     - death is only a new beginning.
     - See you soon.
   textDelay: 0.15

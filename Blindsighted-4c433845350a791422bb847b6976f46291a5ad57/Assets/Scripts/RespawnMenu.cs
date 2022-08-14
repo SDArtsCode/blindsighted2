@@ -34,6 +34,6 @@ public class RespawnMenu : MonoBehaviour
     public void ChangeWeapon()
     {
         AudioManager.instance.Stop("GameOver");
-        LevelLoader.instance.LoadLevel(0, 7);
+        LevelLoader.instance.LoadLevel(0, 6);
     }
 }

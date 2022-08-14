@@ -6,7 +6,7 @@ public class TextDisplayer : MonoBehaviour
 {
     [SerializeField] bool intro;
     [SerializeField] TextMeshProUGUI textDisplay;
-    [SerializeField] Dialogue[] text;
+    [NonReorderable][SerializeField] Dialogue[] text;
     [SerializeField] float textDelay = 0.15f;
     [SerializeField] float sentenceDelay = 1.0f;
 
@@ -51,7 +51,7 @@ public class TextDisplayer : MonoBehaviour
             yield return new WaitForSeconds(sentenceDelay);
         }
 
-        if(settings.loop == 4)
+        if(settings.loop == 4 && !intro)
         {
             yield return new WaitForSeconds(4f);
 

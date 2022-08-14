@@ -31,10 +31,24 @@ public class TokenController : MonoBehaviour
         currentSeconds += Time.deltaTime;
 
         image.fillAmount = 1 - (currentSeconds / maxSeconds);
+
+        text.text = "" + GetTokens(currentSeconds);
     }
 
     void LevelCompleted()
     {
         settings.loops[settings.loop].levels[settings.level].playerSeconds = currentSeconds;
+    }
+
+    int GetTokens(float totalSeconds)
+    {
+        for (int i = 0; i < settings.loops[settings.loop].levels[settings.level].thresholds.Length; i++)
+        {
+            if (totalSeconds >= settings.loops[settings.loop].levels[settings.level].thresholds[i])
+            {
+                return i;
+            }
+        }
+        return 0;
     }
 }

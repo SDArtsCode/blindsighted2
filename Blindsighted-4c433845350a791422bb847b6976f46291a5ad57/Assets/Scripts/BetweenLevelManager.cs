@@ -60,7 +60,8 @@ public class BetweenLevelManager : MonoBehaviour
 
     public void ChangeWeapon()
     {
+        settings.level++;
         AudioManager.instance.Play("MenuAffirmative");
-        LevelLoader.instance.LoadLevel(0, 7);
+        LevelLoader.instance.LoadLevel(0, 6);
     }
 }

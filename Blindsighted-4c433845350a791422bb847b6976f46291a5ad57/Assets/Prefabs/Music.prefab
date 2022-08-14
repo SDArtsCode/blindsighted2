@@ -141,5 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ba7533d29151649868fc7afaf2cbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBumpin: 0
   menuClip: {fileID: 8300000, guid: a6f87afacaf94d748994ae7bc3718d20, type: 3}
+  gameMusic: {fileID: 8300000, guid: 823ab86523caed14f873cae433fe3506, type: 3}
