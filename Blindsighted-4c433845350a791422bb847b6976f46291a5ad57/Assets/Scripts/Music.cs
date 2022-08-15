@@ -28,19 +28,22 @@ public class Music : MonoBehaviour
 
     private void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Enabled");
-
         AudioSource audio = GetComponent<AudioSource>();
+       
         if (SceneManager.GetActiveScene().buildIndex == 7 || SceneManager.GetActiveScene().buildIndex == 6 && audio.clip == gameMusic)
         {
             audio.clip = menuClip;
             audio.Play();
         }
-        else if(audio.clip == menuClip && SceneManager.GetActiveScene().buildIndex != 7 && SceneManager.GetActiveScene().buildIndex != 6)
+        else if (audio.clip == menuClip && SceneManager.GetActiveScene().buildIndex != 7 && SceneManager.GetActiveScene().buildIndex != 6 && SceneManager.GetActiveScene().buildIndex != 0)
         {
             audio.clip = gameMusic;
             audio.Play();
-        }       
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            audio.Stop();
+        }   
     }
 
     private void OnDestroy()

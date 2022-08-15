@@ -1,8 +1,8 @@
 Shader "Custom/Halftone" {
 	//show values to edit in inspector
 	Properties{
-		_Color("Tint", Color) = (0, 0, 0, 1)
 		_MainTex("Texture", 2D) = "white" {}
+		_Step("Step", float) = 0
 		[HDR] _Emission("Emission", color) = (0,0,0)
 
 		_HalftonePattern("Halftone Pattern", 2D) = "white" {}
@@ -30,8 +30,9 @@ Shader "Custom/Halftone" {
 
         //basic properties
 		sampler2D _MainTex;
-		fixed4 _Color;
 		half3 _Emission;
+
+		float _Step;
 
         //shading properties
 		sampler2D _HalftonePattern;
@@ -91,16 +92,17 @@ Shader "Custom/Halftone" {
             //make lightness binary between fully lit and fully shadow based on halftone pattern (with a bit of antialiasing between)
             halftoneValue = map(halftoneValue, _RemapInputMin, _RemapInputMax, _RemapOutputMin, _RemapOutputMax);
             float halftoneChange = fwidth(halftoneValue) * 0.5;
-			lightIntensity = smoothstep(halftoneValue - halftoneChange, halftoneValue + halftoneChange, lightIntensity);
+			
 
-			//combine the color
-			float4 col;
-			//intensity we calculated previously, diffuse color, light falloff and shadowcasting, color of the light
-			col.rgb = lightIntensity * s.Albedo * _LightColor0.rgb;
+			//lightIntensity = smoothstep(halftoneValue - halftoneChange, halftoneValue + halftoneChange, lightIntensity);
+			
+			lightIntensity = 1 - step(smoothstep(halftoneValue - halftoneChange, halftoneValue + halftoneChange, lightIntensity *_LightColor0.rgb), _Step);
+
+			//intensity we calculated previously, diffuse color, light falloff and shadowcasting, color of t;
 			//in case we want to make the shader transparent in the future - irrelevant right now
-			col.a = s.Alpha;
 
-			return col;
+
+			return lightIntensity.xxxx;
 		}
 
 		//input struct which is automatically filled by unity
@@ -111,10 +113,8 @@ Shader "Custom/Halftone" {
 
 		//the surface shader function which sets parameters the lighting function then uses
 		void surf(Input i, inout HalftoneSurfaceOutput o) {
-			//set surface colors
-			fixed4 col = tex2D(_MainTex, i.uv_MainTex);
-			col *= _Color;
-			o.Albedo = col.rgb;
+
+			o.Albedo = float3(0,0,0);
 
 			o.Emission = _Emission;
 

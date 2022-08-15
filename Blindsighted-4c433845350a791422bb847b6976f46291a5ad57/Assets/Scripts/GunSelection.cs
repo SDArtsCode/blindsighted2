@@ -80,7 +80,7 @@ public class GunSelection : MonoBehaviour
 
     public void PurchaseGun(int index)
     {
-        if (settings.tokens > gunCosts[index])
+        if (settings.tokens >= gunCosts[index])
         {
             settings.tokens -= gunCosts[index];
             tokenDisplay.text = "" + settings.tokens;
